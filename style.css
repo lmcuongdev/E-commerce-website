@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -122,12 +124,14 @@ body {
 
 /*----------------Side-menu--------------*/
 .side-menu {
-    height: 79%;
+    /* height: 79%; */
     width: 15%;
     font-size: 14px;
     float: left;
     z-index: 2;
     background-color: #ddd;
+    -webkit-box-shadow: 4px 2px 18px -1px rgba(0, 0, 0, 0.35);
+    box-shadow: 4px 2px 18px -1px rgba(0, 0, 0, 0.35);
 }
 
 .side-menu ul {
@@ -169,10 +173,16 @@ body {
 
 #menu-btn,
 #close-btn {
+    width: 40px;
     font-size: 30px;
     margin: 10px;
     color: #dc3545;
     display: none;
+}
+
+#menu-btn:hover,
+#close-btn:hover {
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 980px) {
@@ -231,7 +241,7 @@ body {
 .featured-categories img {
     width: 100%;
     padding: 20px 0;
-    transition: 1s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
