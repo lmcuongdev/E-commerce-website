@@ -147,7 +147,7 @@ body {
 
 .side-menu ul li ul {
     display: none;
-    z-index: 10;
+    z-index: 2;
     top: 77px;
 }
 
@@ -178,7 +178,7 @@ body {
 @media only screen and (max-width: 980px) {
     .side-menu {
         width: 34%;
-        z-index: 20;
+        z-index: 2;
         top: 133px;
         position: fixed;
         font-size: 12px;
