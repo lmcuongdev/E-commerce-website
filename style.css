@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #c06286;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -20,7 +24,7 @@ body {
     position: sticky;
     background: #fff;
     margin-bottom: 15px;
-    /* border-bottom: 3px solid #dc3545; */
+    /* border-bottom: 3px solid var(--primary-color); */
     border-radius: 2px;
     box-shadow: 0px 1px 10px rgb(117, 115, 110);
     z-index: 2;
@@ -34,18 +38,18 @@ body {
 .form-control {
     margin-top: 9px;
     margin-left: 30px;
-    border: 1px solid #dc3545 !important;
+    border: 1px solid var(--primary-color) !important;
     border-top-left-radius: 20px !important;
     border-bottom-left-radius: 20px !important;
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     box-shadow: none !important;
-
+    color: rgba(0, 0, 0, .87) !important;
 }
 
 .input-group-text {
-    background: #dc3545 !important;
-    border: 1px solid #dc3545 !important;
+    background: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
     margin: 8.5px 10px 3px 0 !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
@@ -79,7 +83,7 @@ body {
     list-style-type: none;
     padding: 15px 20px;
     text-align: center;
-    background-color: #dc3545;
+    background-color: var(--primary-color);
     cursor: pointer;
 }
 
@@ -146,7 +150,7 @@ body {
 }
 
 .side-menu ul li:hover {
-    color: #dc3545;
+    color: var(--primary-color);
 }
 
 .side-menu ul li ul {
@@ -176,7 +180,7 @@ body {
     width: 40px;
     font-size: 30px;
     margin: 10px;
-    color: #dc3545;
+    color: var(--primary-color);
     display: none;
 }
 
@@ -251,8 +255,20 @@ body {
 
 /*---------------On Sale product CSS----------------*/
 
+/* .product {
+} */
+.product {
+    margin-bottom: 10px;
+    transition: all 0.3s linear;
+}
+
+.product:hover {
+    box-shadow: 1px 5px 25px #ccc;
+    transform: scale(1.03);
+}
+
 .title-box {
-    background: #dc3545;
+    background: var(--primary-color);
     color: #fff;
     width: 180px;
     padding: 4px 10px;
@@ -267,7 +283,7 @@ body {
 
 .title-box::after {
     content: '';
-    border-top: 40px solid #dc3545;
+    border-top: 40px solid var(--primary-color);
     border-right: 50px solid transparent;
     position: absolute;
     display: flex;
@@ -299,6 +315,12 @@ body {
     padding: 7px;
     margin-top: 5%;
     margin-bottom: 5%;
+    transition: 0.1s ease;
+}
+
+.overlay-right .fa:hover {
+    color: white;
+    background-color: var(--primary-color);
 }
 
 .overlay-right .btn-secondary {
@@ -316,7 +338,7 @@ body {
 /*--------------Product-bottom-CSS---------------*/
 
 .product-bottom .fa {
-    color: #dc3545;
+    color: var(--primary-color);
     font-size: 10px;
 }
 
@@ -416,11 +438,11 @@ body {
 }
 
 .single-product .fa {
-    color: #dc3545;
+    color: var(--primary-color);
 }
 
 .single-product .price {
-    color: #dc3545;
+    color: var(--primary-color);
     font-size: 26px;
     font-weight: bold;
     padding-top: 20px;
@@ -435,7 +457,7 @@ body {
 }
 
 .single-product .btn-primary {
-    background: #dc3545 !important;
+    background: var(--primary-color) !important;
     color: #fff;
     font-size: 15px;
     margin-left: 20px;
@@ -446,7 +468,7 @@ body {
 /*--------------product-description---------------*/
 .product-description h6 {
     margin-top: 50px;
-    color: #dc3545;
+    color: var(--primary-color);
 }
 
 .product-description p {
