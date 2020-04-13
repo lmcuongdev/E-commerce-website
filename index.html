@@ -21,6 +21,7 @@
         crossorigin="anonymous"></script>
 </head>
 
+
 <body>
     <div class="top-nav-bar">
         <div class="search-box">
@@ -33,12 +34,29 @@
         </div>
         <div class="menu-bar">
             <ul>
-                <li><a href="#"><i class="fa fa-shopping-basket"></i>cart</a></li>
+                <li class="bar"><a href="#"><i class="fa fa-shopping-basket"></i>cart</a></li>
                 <!-- <li><a href="#">Shop Now</a></li> -->
-                <li><a href="#">About</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li class="bar"><a href="#">About</a></li>
+                <li class="bar"><a href="#">Log In</a></li>
+                <li class="bar" id="sign-up"><a href="#">Sign Up</a></li>
             </ul>
+
+        </div>
+    </div>
+    <div class="sign-up-box">
+        <div class="container">
+            <form id="form-group" action="">
+                <span class="fa fa-close"></span>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 
