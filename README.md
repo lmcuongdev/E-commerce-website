@@ -4,3 +4,7 @@ có làm thì mới có ăn.
 làm nhiều ăn nhiều, làm ít ăn ít.
 không làm mà muốn có ăn,
 thì ăn đầu buồi ăn cứt
+
+
+
+thế thôi
