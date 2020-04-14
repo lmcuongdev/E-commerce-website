@@ -34,10 +34,7 @@ $(document).ready(() => {
       $("#side-menu").show();
     }
   });
-});
-
-/*------------------------Goto Top Button---------------*/
-$(document).ready(function(){
+  
   $(window).scroll(function () {
          if ($(this).scrollTop() > 500) {
              $('#back-to-top').fadeIn();
@@ -55,12 +52,7 @@ $(document).ready(function(){
      });
      
      $('#back-to-top').tooltip('show');
-
-});
-
-
-$(document).ready(function(){
-
+  
   $(".filter-button").click(function(){
       var value = $(this).attr('data-filter');
       
@@ -75,5 +67,18 @@ $(document).ready(function(){
           
       }
   });
+});
 
+$("#sign-up").click(function () {
+  $("#form-group").css("display", "block");
+});
+
+$("#form-group span").click(function () {
+  $("#form-group").css("display", "none");
+});
+
+$("#form-group").submit((ev) => {
+  ev.preventDefault();
+  //get data here
+  const username = $("input[name='username']").val();
 });

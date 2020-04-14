@@ -30,6 +30,55 @@ body {
     z-index: 2;
 }
 
+#form-group {
+    width: 50%;
+    top: 30%;
+    right: 20%;
+    padding: 30px 50px;
+    border: 1px solid palevioletred;
+    background-color: white;
+    display: none;
+    position: fixed;
+    z-index: 3;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    outline: none;
+}
+
+#form-group span {
+    float: right;
+    margin-top: -2%;
+    margin-right: -2%;
+}
+
+#form-group span:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+#form-group button {
+    width: 6rem;
+    transition: all 0.2s ease-in;
+}
+
+#form-group button:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
 .logo {
     height: 40px;
     margin: 5px 10px;
@@ -94,6 +143,10 @@ body {
     text-decoration: none;
 }
 
+.menu-bar ul li:hover {
+    background-color: #c06286bb;
+}
+
 .fa-shopping-basket {
     margin-right: 5px;
 }
@@ -124,9 +177,8 @@ body {
 }
 
 
-
-
 /*----------------Side-menu--------------*/
+
 .side-menu {
     /* height: 79%; */
     width: 15%;
@@ -213,6 +265,7 @@ body {
     }
 }
 
+
 /*-----------------slider CSS-------------------*/
 
 .slider {
@@ -236,6 +289,7 @@ body {
     }
 }
 
+
 /*------------featured-categories CSS------------*/
 
 .featured-categories {
@@ -253,10 +307,13 @@ body {
     transform: scale(1.1);
 }
 
+
 /*---------------On Sale product CSS----------------*/
+
 
 /* .product {
 } */
+
 .product {
     margin-bottom: 10px;
     transition: all 0.3s linear;
@@ -291,7 +348,9 @@ body {
     margin-left: 170px;
 }
 
+
 /*-------------product-top CSS----------------*/
+
 .product-top img {
     width: 100%;
 }
@@ -335,6 +394,7 @@ body {
     transition: 0.5s;
 }
 
+
 /*--------------Product-bottom-CSS---------------*/
 
 .product-bottom .fa {
@@ -356,7 +416,9 @@ body {
     margin: 50px 0;
 }
 
+
 /*----------website-features-------------*/
+
 .website-features {
     margin: 60px 0;
 }
@@ -376,7 +438,9 @@ body {
     padding-top: 20px;
 }
 
+
 /*--------------footer---------------*/
+
 .footer {
     margin-top: 50px;
     background: #000;
@@ -420,6 +484,7 @@ body {
 
 
 /*----------------single-product---------------*/
+
 .single-product {
     margin-top: 70px;
 }
@@ -465,7 +530,9 @@ body {
     box-shadow: none !important;
 }
 
+
 /*--------------product-description---------------*/
+
 .product-description h6 {
     margin-top: 50px;
     color: var(--primary-color);
