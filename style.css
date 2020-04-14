@@ -167,16 +167,20 @@ body {
         height: 118px;
         border-bottom: 0;
     }
+
     .search-box {
         width: 100%;
     }
+
     .menu-bar {
         width: 100%;
     }
+
     .menu-bar ul {
         margin: 10px 0;
         width: 100%;
     }
+
     .menu-bar ul li {
         height: 58px;
         width: 100%;
@@ -258,12 +262,15 @@ body {
         display: none;
         background: #f1f3f4;
     }
+
     .side-menu ul li ul {
         top: 133px;
     }
+
     .side-menu ul li:hover ul {
         margin-left: 31%;
     }
+
     #menu-btn {
         display: block;
     }
@@ -569,20 +576,19 @@ body {
     overflow: hidden;
 }
 
-.container {
+#filter {
     text-align: center;
-    margin-bottom: 30px;
 }
 
-.container .btn {
+#filter .btn {
     border: 1px solid rgb(97, 92, 92);
+    transition: all 0.2s ease-in;
 }
 
-.container .btn-default:hover {
+#filter .btn-default:hover {
     background-color: rgb(179, 176, 171);
 }
 
-.container .btn-default:focus {
-    border: 2px solid black;
+#filter .btn-default:focus {
     background-color: rgb(179, 176, 171);
 }
