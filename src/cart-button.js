@@ -7,11 +7,11 @@ $("#open-side").on('click', function() {
 });
 
 $(document).ready(function() {
-    var addMoney, subMoney;
     var sum = 0;
 
-    $(".on-sale .fa-shopping-cart").on('click', function() {
+    var listOfProduct = [];
 
+    $(".on-sale .fa-shopping-cart").on('click', function() {
         var product = $(this).parent().parent().parent().siblings("div");
         var nameProduct = $.trim($(product).children("h3").text());
         var index = listOfProduct.indexOf(nameProduct);
@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
 
     $(document).on("click", ".cart-list li[class!='total ']", function() {
-        subMoney = $("h5").html();
+        var subMoney = $(this).children("h5").html();
         sum -= parseFloat(subMoney.substr(1));
         $('.total .float-right').text(sum);
         $("#quantity").text(parseInt($("#quantity").text()) - 1);
