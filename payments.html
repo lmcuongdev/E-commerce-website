@@ -50,6 +50,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
+                    <div id="checkout-title">
+                        <h1>Cart Checkout</h1>
+                    </div>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -59,42 +62,47 @@
                                 <th scope="col" class="text-center">Quantity</th>
                                 <th scope="col" class="text-right">Price</th>
                                 <th> </th>
+                                <th>Subtotal</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><img src="./images/product3.jpg" /> </td>
-                                <td>Product Name Dada</td>
+                                <td class="product-name">Product Name</td>
                                 <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
+                                <td><input class="form-control" type="number" value="1" /></td>
                                 <td class="text-right">124,90 €</td>
                                 <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
                                     </button> </td>
+                                <td>100</td>
                             </tr>
                             <tr>
                                 <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                 <td>Product Name Toto</td>
                                 <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
+                                <td><input class="form-control" type="number" value="1" /></td>
                                 <td class="text-right">33,90 €</td>
                                 <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
                                     </button> </td>
+                                <td>200</td>
                             </tr>
                             <tr>
                                 <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                 <td>Product Name Titi</td>
                                 <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
+                                <td><input class="form-control" type="number" value="1" /></td>
                                 <td class="text-right">70,00 €</td>
                                 <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
                                     </button> </td>
+                                <td>300</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Sub-Total</td>
+                                <td></td>
+                                <td class="text-left">Sub-Total</td>
                                 <td class="text-right">255,90 €</td>
                             </tr>
                             <tr>
@@ -102,21 +110,23 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Shipping</td>
+                                <td></td>
+                                <td class="text-left">Shipping</td>
                                 <td class="text-right">6,90 €</td>
-                            </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><strong>Total</strong></td>
+                                <td></td>
+                                <td class="text-left"><strong>Total</strong></td>
                                 <td class="text-right"><strong>346,90 €</strong></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
             <div class="col mb-2">
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
