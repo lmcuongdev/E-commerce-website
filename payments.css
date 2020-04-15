@@ -5,6 +5,8 @@ td img {
 .form-control {
     width: 100px !important;
     border-radius: 0 !important;
+    margin: 0 !important;
+    padding-right: 0 !important;
 }
 
 table {
