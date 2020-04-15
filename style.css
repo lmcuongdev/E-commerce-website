@@ -460,9 +460,11 @@ body {
 }
 .footer .primary {
     background: #595959;
-
 }
 
+.footer .secondary {
+    padding: 20px;
+}
 
 .footer h5 {
     font-size: 25px;
@@ -489,7 +491,7 @@ body {
     padding-bottom: 10px;
 }
 #icon:hover {
-    color: rgb(124, 47, 105);
+    color: var(--primary-color);
     cursor: pointer;
 }
 /*----------------single-product---------------*/
