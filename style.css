@@ -57,6 +57,46 @@ body {
     border-bottom-right-radius: 20px;
 }
 
+.side {
+    right: 0;
+    top: 0;
+    width: 280px;
+    max-width: 280px;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    background-color: gray;
+    display: block;
+    transition: max-width 1s ease-out;
+}
+
+.side .close-side {
+    float: right;
+}
+
+.cart-box {
+    background-color: white;
+    border: 1px solid black;
+    margin: 40px 20px 20px;
+}
+
+.cart-list {
+    margin: 10px;
+    list-style-type: none;
+    height: 650px;
+    overflow: auto;
+}
+
+.cart-list li {
+    border-bottom: 1px dashed black;
+}
+
+.cart-list li img {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
 #form-group input {
     width: 100%;
     padding: 10px;
