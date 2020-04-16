@@ -10,7 +10,7 @@ body{
 
 .signup-title{
     color: rgb(106, 106, 235);
-    margin-left: 87px;
+    text-align: center;
     margin-bottom: 25px;
 }
 
@@ -87,6 +87,7 @@ body{
     font-size: 12px;
     font-family: sans-serif;
     color: rgb(240, 151, 151);
+    margin-left: 5px;
 }
 .gender{
     margin-top: 10px;
@@ -102,10 +103,11 @@ body{
     border: none;
     outline: none;
     cursor: pointer;
+    text-align: center;
     background-color: var(--primary-color);
 }
 .or{
-    margin-left: 65px;
+    text-align: center;
 }
 
 .hrr{
