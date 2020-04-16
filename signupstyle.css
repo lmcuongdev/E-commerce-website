@@ -10,7 +10,7 @@ body {
 
 .signup-title {
     color: rgb(106, 106, 235);
-    margin-left: 87px;
+    text-align: center;
     margin-bottom: 25px;
 }
 
@@ -109,7 +109,7 @@ body {
 }
 
 .or {
-    margin-left: 65px;
+    text-align: center;
 }
 
 .hrr {
