@@ -1,25 +1,27 @@
 $(document).ready(function () {
-  /* Set rates + misc */
   const shippingRate = 6.9;
   const fadeTime = 100;
 
+  const VND = (money) => money;
+
+  //  Recalculate cart
   function recalculateCart() {
     let total = 0;
 
-    /* Sum up row totals */
+    // Row total for each item
     $(".product-row").each((i, row) => {
       total += parseFloat($(row).children(".product-subtotal").text());
     });
 
-    /* Calculate totals */
+    // Calculate totals
     let shipping = total > 0 ? shippingRate : 0;
     let grandTotal = total + shipping;
 
     /* Update totals display */
     $("#total, #grand-total").fadeOut(fadeTime, () => {
-      $("#total").text(total.toFixed(2));
-      $("#cart-shipping").text(shipping.toFixed(2));
-      $("#grand-total").text(grandTotal.toFixed(2));
+      $("#total").text(VND(total));
+      $("#cart-shipping").text(VND(shipping));
+      $("#grand-total").text(VND(grandTotal));
       // not yet fixed
       if (grandTotal == 0) {
         $(".checkout").fadeOut(fadeTime);
@@ -28,11 +30,10 @@ $(document).ready(function () {
       }
       $("#total, #grand-total").fadeIn(fadeTime);
     });
-    console.log(total, grandTotal);
+    // console.log(total, grandTotal);
   }
 
-  setTimeout(recalculateCart, 1000);
-  /* Update quantity */
+  // Update quantity
   function updateQuantity(quantityInput) {
     /* Calculate line price */
     let productRow = $(quantityInput).parent().parent();
@@ -43,30 +44,31 @@ $(document).ready(function () {
     productRow.children(".product-subtotal").each((i, row) => {
       $(row).fadeOut(fadeTime, () => {
         console.log($(row).text());
-        $(row).text(linePrice.toFixed(2));
+        $(row).text(VND(linePrice));
         recalculateCart();
         $(row).fadeIn(fadeTime);
       });
     });
   }
 
-  /* Assign actions */
-  $(".product-quantity input").change(function () {
-    updateQuantity(this);
+  // Event handler
+  $(".product-quantity input").on("change", (event) => {
+    event.target.value = event.target.value < 0 ? 0 : event.target.value;
+    updateQuantity(event.target);
   });
 
-  $(".product-removal button").click(function () {
+  $(".product-row .product-removal .btn").on("click", function () {
+    console.log(this);
     removeItem(this);
   });
-  /* Recalculate cart */
 
-  /* Remove item from cart */
-  // function removeItem(removeButton) {
-  //   /* Remove row from DOM and recalc cart total */
-  //   let productRow = $(removeButton).parent().parent();
-  //   productRow.slideUp(fadeTime, function () {
-  //     productRow.remove();
-  //     recalculateCart();
-  //   });
-  // }
+  //  Remove item from cart by removing row
+  function removeItem(removeButton) {
+    let productRow = $(removeButton).parent().parent();
+    productRow.fadeOut(2 * fadeTime, function () {
+      productRow.remove();
+      recalculateCart();
+      s;
+    });
+  }
 });

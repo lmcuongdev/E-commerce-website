@@ -10,6 +10,11 @@
     padding-right: 0 !important;
 }
 
-table {
-    text-align: center;
+.product-removal .btn {
+    transition: 0.2s;
+}
+
+.product-removal .btn:hover {
+    -webkit-box-shadow: 0px 0px 11px 1px #DC3545;
+    box-shadow: 0px 0px 11px 1px #DC3545;
 }
