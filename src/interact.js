@@ -25,6 +25,7 @@ $(document).ready(() => {
   });
 
   /*------------------------Goto Top Button---------------*/
+  
   $(window).scroll(function () {
     if ($(this).scrollTop() > 500) {
       $("#back-to-top").fadeIn();
