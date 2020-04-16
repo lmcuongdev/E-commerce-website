@@ -1,8 +1,9 @@
-td img {
+.product-img img {
     width: 120px;
+    height: 120px;
 }
 
-.form-control {
+.product-quantity .form-control {
     width: 100px !important;
     border-radius: 0 !important;
     margin: 0 !important;
