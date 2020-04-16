@@ -1,0 +1,115 @@
+/*-------------------Sign up page------------------------*/
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(images/img-1.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.signup-title{
+    color: rgb(106, 106, 235);
+    margin-left: 87px;
+    margin-bottom: 25px;
+}
+
+.sign-box{
+    width: 500px;
+    height: 600px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    background: #fff;
+    padding: 50px;
+    margin: 3.5% auto;
+    text-align: inherit;
+}
+
+.input-label{
+    margin-left: 5px;
+}
+.input-username {
+    padding-left: 5px;
+    border: 2px ridge;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.input-pass{
+    padding-left: 5px;
+    border: 2px ridge;
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 4px;
+}
+
+.input-firstname{
+    padding-left: 5px;
+    border: 2px ridge;
+    border-radius: 5px;
+    width: 30%;
+    margin-top: 10px;
+    margin-left: 27px;
+}
+
+.input-lastname{
+    padding-left: 5px;
+    border: 2px ridge;
+    border-radius: 5px;
+    width: 30%;
+    margin-top: 10px;
+}
+
+.input-phone{
+    padding-left: 5px;
+    border: 2px ridge;
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.input-address{
+    padding-left: 5px;
+    border: 2px ridge;
+    border-radius: 5px;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.input-birth{
+    margin-left: 10px;
+}
+
+.warning-text{
+    font-size: 12px;
+    font-family: sans-serif;
+    color: rgb(240, 151, 151);
+}
+.gender{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.sign-button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+.or{
+    margin-left: 65px;
+}
+
+.hrr{
+    margin-left: 38px;
+    width: 80%;
+    background-color: black;
+}
