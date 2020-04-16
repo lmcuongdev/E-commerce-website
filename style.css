@@ -491,16 +491,24 @@ body {
 
 .footer {
     margin-top: 50px;
-    background: #000;
     color: #fff;
+    background-color: rgb(14, 13, 13);
+
+}
+.footer .primary {
+    background: #595959;
 }
 
-.footer h1 {
-    font-size: 15px;
+.footer .secondary {
+    padding: 20px;
+}
+
+.footer h5 {
+    font-size: 25px;
     margin: 25px 0;
 }
 
-.footer p {
+.footer a {
     font-size: 12px;
 }
 
@@ -511,23 +519,17 @@ body {
     padding-bottom: 20px;
 }
 
-.fa-heart-o {
-    color: red;
-    font-size: 15px;
-}
-
-.footer hr {
-    margin-top: 10px;
-    background-color: #ccc;
-}
-
-.footer-image img {
-    width: 150px;
-}
-
 .footer .row .fa {
     padding-right: 20px;
-    font-size: 15px;
+    font-size: 45px;
+}
+
+.icon {
+    padding-bottom: 10px;
+}
+#icon:hover {
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
 
