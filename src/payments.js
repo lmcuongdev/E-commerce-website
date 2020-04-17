@@ -73,12 +73,16 @@ $(document).ready(function () {
     });
   }
 
-  $("#continue-shopping").on("click", () => {
+  $("#continue-shopping,.pop-up #back").on("click", () => {
     location.href = location.href.replace("payments.html", "index.html");
   });
 
   // auto calculate every time load the page
   $(".product-quantity input").each((i, input) => {
     updateQuantity(input);
+  });
+
+  $("#checkout").on("click", function () {
+    $("#congrats-popup").modal("show");
   });
 });
