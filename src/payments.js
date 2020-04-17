@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  const shippingRate = 6.9;
-  const fadeTime = 100;
+  const shippingRate = 50000;
+  const fadeTime = 100; //ms
 
   const VND = (money) => money;
 
@@ -23,10 +23,13 @@ $(document).ready(function () {
       $("#cart-shipping").text(VND(shipping));
       $("#grand-total").text(VND(grandTotal));
       // not yet fixed
-      if (grandTotal == 0) {
-        $(".checkout").fadeOut(fadeTime);
+      if (grandTotal <= 0) {
+        $("#checkout").fadeOut(fadeTime, () => {
+          $("#continue-shopping").parent().removeClass("col-md-6");
+        });
       } else {
-        $(".checkout").fadeIn(fadeTime);
+        $("#continue-shopping").parent().addClass("col-md-6");
+        $("#checkout").fadeIn(fadeTime);
       }
       $("#total, #grand-total").fadeIn(fadeTime);
     });
@@ -39,12 +42,12 @@ $(document).ready(function () {
     let productRow = $(quantityInput).parent().parent();
     let price = parseFloat(productRow.children(".product-price").text());
     let quantity = $(quantityInput).val();
-    let linePrice = price * quantity;
+    let subtotal = price * quantity;
+
     /* Update line price display and recalc cart totals */
     productRow.children(".product-subtotal").each((i, row) => {
       $(row).fadeOut(fadeTime, () => {
-        console.log($(row).text());
-        $(row).text(VND(linePrice));
+        $(row).text(VND(subtotal));
         recalculateCart();
         $(row).fadeIn(fadeTime);
       });
@@ -58,7 +61,6 @@ $(document).ready(function () {
   });
 
   $(".product-row .product-removal .btn").on("click", function () {
-    console.log(this);
     removeItem(this);
   });
 
@@ -68,7 +70,15 @@ $(document).ready(function () {
     productRow.fadeOut(2 * fadeTime, function () {
       productRow.remove();
       recalculateCart();
-      s;
     });
   }
+
+  $("#continue-shopping").on("click", () => {
+    location.href = location.href.replace("payments.html", "index.html");
+  });
+
+  // auto calculate every time load the page
+  $(".product-quantity input").each((i, input) => {
+    updateQuantity(input);
+  });
 });

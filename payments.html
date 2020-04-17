@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="container mb-4">
+    <div class="container-md">
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
@@ -76,7 +76,7 @@
                                 <td class="product-removal"><button class="btn btn-sm btn-danger"><i
                                             class="fa fa-trash"></i></button>
                                 </td>
-                                <td class="product-subtotal text-right">100</td>
+                                <td class="product-subtotal text-right">0</td>
                             </tr>
                             <tr class="product-row">
                                 <td class="product-img"><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
@@ -84,11 +84,11 @@
                                 <td>In stock</td>
                                 <td class="product-quantity"><input min='0' class="form-control" type="number"
                                         value="1" /></td>
-                                <td class="product-price text-right">49000</td>
+                                <td class="product-price text-right">50000</td>
                                 <td class="product-removal"><button class="btn btn-sm btn-danger"><i
                                             class="fa fa-trash"></i> </button>
                                 </td>
-                                <td class="product-subtotal text-right">200</td>
+                                <td class="product-subtotal text-right">0</td>
                             </tr>
                             <tr class="product-row">
                                 <td class="product-img"><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
@@ -100,7 +100,7 @@
                                 <td class="product-removal"><button class="btn btn-sm btn-danger"><i
                                             class="fa fa-trash"></i> </button>
                                 </td>
-                                <td class="product-subtotal text-right">300</td>
+                                <td class="product-subtotal text-right">0</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -109,7 +109,7 @@
                                 <td></td>
                                 <td></td>
                                 <td class="text-left">Total</td>
-                                <td id="total" class="text-right">255.90 €</td>
+                                <td id="total" class="text-right">0</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -118,7 +118,7 @@
                                 <td></td>
                                 <td></td>
                                 <td class="text-left">Shipping</td>
-                                <td id="cart-shipping" class="text-right">6.90 €</td>
+                                <td id="cart-shipping" class="text-right">0</td>
                             <tr>
                                 <td></td>
                                 <td></td>
@@ -126,7 +126,7 @@
                                 <td></td>
                                 <td></td>
                                 <td class="text-left"><strong>Grand Total</strong></td>
-                                <td id="grand-total" class="text-right"><strong>346.90 €</strong></td>
+                                <td id="grand-total" class="text-right"><strong>0</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -135,11 +135,12 @@
 
             <div class="col mb-2">
                 <div class="row">
-                    <div class="col-sm-12  col-md-6">
-                        <button class="btn btn-block btn-light">Continue Shopping</button>
+                    <div class="col-sm-12 col-md-6">
+                        <button id="continue-shopping" class="btn btn-lg btn-block btn-outline-warning">Continue
+                            Shopping</button>
                     </div>
-                    <div class="col-sm-12 col-md-6 text-right">
-                        <button class=" checkout btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                    <div class="col-sm-12 col-md-6">
+                        <button id="checkout" class=" btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
                     </div>
                 </div>
             </div>
