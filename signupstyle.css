@@ -16,7 +16,7 @@ body {
 
 .sign-box {
     width: 500px;
-    height: 800px;
+    height: 700px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
     border-radius: 15px;
     background: #fff;
@@ -33,14 +33,14 @@ body {
     padding-left: 5px;
     border: 2px ridge;
     border-radius: 5px;
-    width: 60%;
+    width: 70%;
 }
 
 .input-pass {
     padding-left: 5px;
     border: 2px ridge;
     border-radius: 5px;
-    width: 50%;
+    width: 70%;
     margin-top: 10px;
     margin-left: 4px;
 }
@@ -66,7 +66,7 @@ body {
     padding-left: 5px;
     border: 2px ridge;
     border-radius: 5px;
-    width: 50%;
+    width: 70%;
     margin-top: 10px;
     margin-left: 20px;
 }
@@ -75,7 +75,7 @@ body {
     padding-left: 5px;
     border: 2px ridge;
     border-radius: 5px;
-    width: 80%;
+    width: 70%;
     margin-top: 10px;
     margin-left: 12px;
 }
@@ -120,9 +120,11 @@ body {
 
 .error {
     padding-left: 85px;
+    margin-bottom: 0px;
 }
 
 .accept {
     padding-left: 85px;
     color: green;
+    margin-bottom: 0px;
 }
