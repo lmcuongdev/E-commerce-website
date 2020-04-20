@@ -97,8 +97,12 @@ body {
 
 .cart-list li img {
     float: left;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+}
+
+.cart-list li i {
+    color: yellow;
 }
 
 #form-group input {
