@@ -57,17 +57,17 @@ body {
     border-bottom-right-radius: 20px;
 }
 
+/*----------------Quick checkout menu--------------*/
 .side {
     right: 0;
     top: 0;
     width: 280px;
     max-width: 280px;
-    height: 100%;
     position: fixed;
     z-index: 3;
     background-color: gray;
     display: none;
-    transition: max-width 1s ease-out;
+    transition: max-width 0.5s ease-out;
 }
 
 .side .close-side {
@@ -81,14 +81,14 @@ body {
 .cart-box {
     background-color: white;
     border: 1px solid black;
-    margin: 40px 20px 20px;
+    margin: 30px 10px 10px;
 }
 
 .cart-list {
-    margin: 10px;
+    margin: 7px;
     list-style-type: none;
-    height: 650px;
-    overflow: auto;
+    max-height: 80vh;
+    overflow: auto
 }
 
 .cart-list li {
