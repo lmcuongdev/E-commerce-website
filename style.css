@@ -371,9 +371,14 @@ body {
     transition: all 0.3s linear;
 }
 
+.product img{
+    margin-top: 12px;
+    height: 250px;
+    width: 200px;
+}
 .product:hover {
     box-shadow: 1px 5px 25px #ccc;
-    transform: scale(1.03);
+    transform: translateY(-10px);
 }
 
 .title-box {
