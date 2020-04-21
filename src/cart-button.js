@@ -1,17 +1,17 @@
-$(".close-side").on('click', function() {
+$(".close-side").on('click', function () {
     $(".side").hide({ direction: "right" }, 2000);
 });
 
-$("#open-side").on('click', function() {
+$("#cart").on('click', function () {
     $(".side").show({ direction: "left" }, 2000);
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     var sum = 0;
 
     var listOfProduct = [];
 
-    $(".on-sale .fa-shopping-cart").on('click', function() {
+    $(".on-sale .fa-shopping-cart").on('click', function () {
         var product = $(this).parent().parent().parent().siblings("div");
         var nameProduct = $.trim($(product).children("h3").text());
         var index = listOfProduct.indexOf(nameProduct);
@@ -21,7 +21,7 @@ $(document).ready(function() {
             $(".cart-list").prepend('<li>' + '<img src=' + img.attr('src') + '><span id="quantityInBag" class="float-right" style="font-size: larger; color: red;">1</span>' + sizeName + '</li>');
             listOfProduct.push(nameProduct);
         } else {
-            $(".cart-list li h6").each(function() {
+            $(".cart-list li h6").each(function () {
                 if ($(this).text() == nameProduct) {
                     $(this).siblings("span").text(parseInt($(this).siblings("span").text()) + 1);
                 }
@@ -34,7 +34,7 @@ $(document).ready(function() {
         $("#quantity").text(parseInt($("#quantity").text()) + 1);
     });
 
-    $(document).on("click", ".cart-list li[class!='total ']", function() {
+    $(document).on("click", ".cart-list li[class!='total ']", function () {
         var subMoney = $(this).children("h7").html();
         sum -= parseFloat(subMoney.substr(1));
         $('.total .float-right').text(sum);

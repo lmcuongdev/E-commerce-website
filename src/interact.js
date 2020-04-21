@@ -25,7 +25,7 @@ $(document).ready(() => {
   });
 
   /*------------------------Goto Top Button---------------*/
-  
+
   $(window).scroll(function () {
     if ($(this).scrollTop() > 500) {
       $("#back-to-top").fadeIn();
@@ -45,5 +45,5 @@ $(document).ready(() => {
     return false;
   });
 
-  $("#back-to-top").tooltip("show");
+  $("#back-to-top").tooltip();
 });
