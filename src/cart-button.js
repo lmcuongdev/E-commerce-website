@@ -22,7 +22,8 @@ $(document).ready(function () {
             let img = $(this).parents(".product-top").children().children("img");
             let sizeName = product.html().replace("h3", "h6").replace("h5", "h7");
             $(".cart-list").prepend('<li>' + '<img src=' + img.attr('src') + '><span class="quantityInBag float-right" style="font-size: larger; color: red;">1</span>' + sizeName + '</li>');
-            listOfProduct.push({ name: nameProduct, price: price, quantity: 1 });
+
+            listOfProduct.push({ name: nameProduct, img: img.attr('src'), price: price, quantity: 1 });
         } else {
             $(".cart-list li h6").each(function () {
                 if ($(this).text() === nameProduct) {
