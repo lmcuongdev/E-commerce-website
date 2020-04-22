@@ -1,8 +1,27 @@
 $(document).ready(function () {
-  const shippingRate = 50000;
+  const shippingCost = 50000;
   const fadeTime = 100; //ms
 
-  const VND = (money) => money;
+  const VND = (money) => money + " VND";
+
+  // retrieve data
+  const cart = JSON.parse(sessionStorage.cart);
+  console.log(cart);
+  for (const product of cart) {
+    $('table.table tbody').prepend(
+      `<tr class="product-row">
+        <td class="product-img"><img src="${product.img}" /> </td>
+        <td class="product-name">${product.name}</td>
+        <td>In stock</td>
+        <td class="product-quantity"><input min='0' class="form-control" type="number"
+                value="${product.quantity}" /></td>
+        <td class="product-price text-right">${product.price}</td>
+        <td class="product-removal"><button class="btn btn-sm btn-danger"><i
+                    class="fa fa-trash"></i></button>
+        </td>
+        <td class="product-subtotal text-right">0</td>
+      </tr>`);
+  }
 
   //  Recalculate cart
   function recalculateCart() {
@@ -14,7 +33,7 @@ $(document).ready(function () {
     });
 
     // Calculate totals
-    let shipping = total > 0 ? shippingRate : 0;
+    let shipping = total > 0 ? shippingCost : 0;
     let grandTotal = total + shipping;
 
     /* Update totals display */
@@ -77,12 +96,13 @@ $(document).ready(function () {
     location.href = location.href.replace("payments.html", "index.html");
   });
 
+  $("#checkout").on("click", function () {
+    $("#congrats-popup").modal("show");
+  });
+
   // auto calculate every time load the page
   $(".product-quantity input").each((i, input) => {
     updateQuantity(input);
   });
 
-  $("#checkout").on("click", function () {
-    $("#congrats-popup").modal("show");
-  });
 });
