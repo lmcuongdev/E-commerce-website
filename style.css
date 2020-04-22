@@ -105,6 +105,11 @@ body {
     color: yellow;
 }
 
+.btn#complete a {
+    text-decoration: none;
+    color: white;
+}
+
 #form-group input {
     width: 100%;
     padding: 10px;
