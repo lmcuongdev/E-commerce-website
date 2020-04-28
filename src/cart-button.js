@@ -17,7 +17,7 @@ $(document).ready(function () {
         let nameProduct = $.trim($(product).children("h3").text());
         let index = listOfProduct.map(obj => obj['name']).indexOf(nameProduct);
         // get rid of $ sign
-        let price = parseFloat($(product).children("h5").html().substr(1));
+        let price = parseFloat($(product).children("h5").html());
         if (index === -1) {
             let img = $(this).parents(".product-top").children().children("img");
             let sizeName = product.html().replace("h3", "h6").replace("h5", "h7");
@@ -42,7 +42,7 @@ $(document).ready(function () {
     // remove item
     $(document).on("click", ".cart-list li[class!='total ']", function () {
         let subMoney = $(this).children("h7").html();
-        sum -= parseFloat(subMoney.substr(1));
+        sum -= parseFloat(subMoney);
         $('.total .float-right').text(sum);
         $("#quantity").text(parseInt($("#quantity").text()) - 1);
 
