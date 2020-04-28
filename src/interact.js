@@ -1,3 +1,4 @@
+import * as Utils from "./utils.js";
 // Nav bar responsive interact
 $(document).ready(() => {
   $("#menu-btn").on("click", () => {
@@ -22,6 +23,10 @@ $(document).ready(() => {
       $("#menu-btn").hide();
       $("#side-menu").show();
     }
+  });
+  $(".product .unit-cost").each((i, price) => {
+    // console.log(object);
+    $(price).text(Utils.VND($(price).text()));
   });
 
   /*------------------------Goto Top Button---------------*/
