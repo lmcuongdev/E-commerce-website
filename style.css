@@ -9,6 +9,7 @@
 :root {
     --primary-color: #CE5937;
     --linear-color: -webkit-linear-gradient(top, #CE5937 0%, #C59237 100%);
+    --hover-color: -webkit-linear-gradient(top, #CE5937 0%, #ad7c25 100%);
 }
 
 html {
@@ -210,7 +211,7 @@ body {
 }
 
 .menu-bar ul li:hover {
-    background-color: #c06286bb;
+    background: var(--hover-color)
 }
 
 .fa-shopping-basket {
@@ -404,20 +405,11 @@ body {
     height: 40px;
     margin-bottom: 30px;
     display: flex;
+    border-top-right-radius: 50px;
 }
 
 .title-box h2 {
     font-size: 24px;
-}
-
-.title-box::after {
-    content: '';
-    border-top: 40px solid var(--primary-color);
-    border-right: 50px solid transparent;
-    position: absolute;
-    display: flex;
-    margin-top: -4px;
-    margin-left: 170px;
 }
 
 
@@ -565,6 +557,15 @@ body {
     margin-top: 70px;
 }
 
+.single-product .carousel-item {
+    height: 450px;
+}
+
+.single-product .carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
 .new-arrival {
     background: green;
     width: 50px;
@@ -591,19 +592,28 @@ body {
 
 .single-product input {
     border: 1px solid #ccc;
-    font-weight: bold;
+    /* font-weight: bold; */
     height: 33px;
     text-align: center;
-    width: 30px;
+    width: 40px;
 }
 
-.single-product .btn-primary {
-    background: var(--primary-color) !important;
+.single-product .btn {
+    background: var(--linear-color) !important;
     color: #fff;
+    /* width: 300px; */
     font-size: 15px;
-    margin-left: 20px;
     border: none;
     box-shadow: none !important;
+}
+
+.single-product .btn:hover {
+    background: var(--hover-color) !important;
+}
+
+.single-product .carousel .carousel-control-prev-icon,
+.single-product .carousel .carousel-control-next-icon {
+    filter: invert(50%);
 }
 
 
