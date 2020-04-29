@@ -19,59 +19,67 @@
     <div>
         <div class="top-nav-bar">
             <div class="search-box">
-
+                <i class="fa fa-bars" id="menu-btn"></i>
+                <i class="fa fa-times" id="close-btn"></i>
+    
                 <a href="index.html"><img src="images/orange-logo.png" class="logo"></a>
-                <input type="text" class="form-control">
+                <input id="myInput" type="text" class="form-control" placeholder="Search" value="">
+                <select id="sel" size="2"></select>
                 <span class="input-group-text"><i class="fa fa-search"></i></span>
             </div>
             <div class="menu-bar">
                 <ul>
-                    <li><a href="#"><i class="fa fa-shopping-basket"></i>cart</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">Log In</a></li>
+                    <li class="bar" id="cart"><a href="#"><i class="fa fa-shopping-basket"></i>Giỏ hàng</a>
+                        <span id="quantity" style="color: white;">0</span>
+                    </li>
+                    <!-- <li><a href="#">Shop Now</a></li> -->
+                    <li class="bar"><a href="#info">Về chúng tôi</a></li>
+                    <li class="bar" id="sign-up"><a href="#">Đăng nhập</a></li>
+                    <li class="bar"><a href="signup.html">Đăng kí</a></li>
                 </ul>
+    
             </div>
         </div>
         <div>
             <div class="sign-box">
-                <h1 class="signup-title"> Sign up now </h1>
+                <h1 class="signup-title"> Đăng kí </h1>
                 <form class="signup-form">
                     <div>
                         <label class="input-label">Username</label>
-                        <input type="text" class="input-username" placeholder="Your username">
+                        <input type="text" class="input-username" placeholder="Nhập username">
                     </div>
                     <div>
                         <label class="input-label">Password</label>
-                        <input type="password" class="input-pass" placeholder="Your password">
+                        <input type="password" class="input-pass" placeholder="Nhập password">
                     </div>
                     <div>
-                        <label class="input-label">Name </label>
-                        <input type="text" class="input-firstname" placeholder="First name">
-                        <input type="text" class="input-lastname" placeholder="Last name">
+                        <label class="input-label">Tên </label>
+                        <input type="text" class="input-firstname" placeholder="Họ">
+                        <input type="text" class="input-lastname" placeholder="Tên">
                     </div>
-                    <label class="input-label">Address</label>
-                    <input type="text" class="input-address" placeholder="Your address">
-                    <p class="warning-text">(Make sure your address is correct, or else you cant recive your orders)</p>
+                    <label class="input-label">Địa chỉ</label>
+                    <input type="text" class="input-address" placeholder="Nhập địa chỉ">
+                    <p class="warning-text"> (Hãy chắc chắn bạn nhập đúng địa chỉ, nếu không đơn hàng có thể không được gửi đến bạn)</p>
                     <div>
-                        <label class="input-label"> Birthday</label>
+                        <label class="input-label"> Ngày sinh</label>
                         <span class="input-birth">
-                            <select name="month" id="month">
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
+                            <select name="Tháng" id="month">
+                            <option value="01">Tháng 1</option>
+                            <option value="02">Tháng 2</option>
+                            <option value="03">Tháng 3</option>
+                            <option value="04">Tháng 4</option>
+                            <option value="05">Tháng 5</option>
+                            <option value="06">Tháng 6</option>
+                            <option value="07">Tháng 7</option>
+                            <option value="08">Tháng 8</option>
+                            <option value="09">Tháng 9</option>
+                            <option value="10">Tháng 10</option>
+                            <option value="11">Tháng 11</option>
+                            <option value="12">Tháng 12</option>
                             </select> 
                         </span>
                         <span>
-                            <select name="day" id="day">
+                            <select name="Ngày" id="day">
                                 <option value="01">1</option>
                                 <option value="02">2</option>
                                 <option value="03">3</option>
@@ -106,7 +114,7 @@
                             </select>
                         </span>
                         <span>
-                            <select name="year" id="year">
+                            <select name="Năm" id="year">
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
                                 <option value="2018">2018</option>
@@ -232,22 +240,22 @@
                         </span>
                     </div>
 
-                    <label class="input-label" id="gender"> Gender:
+                    <label class="input-label" id="gender"> Giới tính:
                         <span>
-                            <input id="male" class="gender" type="radio" name="male-female">Male
-                            <input id="female" class="gender" type="radio" name="male-female">Female
+                            <input id="male" class="gender" type="radio" name="male-female">Nam
+                            <input id="female" class="gender" type="radio" name="male-female">Nữ
                         </span>
                     </label>
                     <div>
-                        <label class="input-label"> Phone</label>
-                        <input type="tel" class="input-phone" placeholder="Your phone number">
+                        <label class="input-label"> Điện thoại</label>
+                        <input type="tel" class="input-phone" placeholder="Nhập SĐT">
                     </div>
                     <div>
-                        <input type="submit" class="sign-button" value="Submit" />
+                        <input type="submit" class="sign-button" value="Xác nhận" />
                     </div>
                     <div>
                         <hr class="hrr">
-                        <p class="or">Already have an account? <a href="#" target="_blank">Sign in here</a>.</p>
+                        <p class="or">Có tài khoản rồi? <a href="#" target="_blank">Đăng nhập tại đây</a>.</p>
                     </div>
                 </form>
             </div>
@@ -255,31 +263,31 @@
 
         <section class="footer" id="info">
             <div class="secondary">
-                <div class="container text-center " >
+                <div class="container text-center ">
                     <div class="row">
                         <div class="col-md-4">
-                            <h4>Useful Links</h4>
-                            <p>Privacy Policy</p>
-                            <p>Terms of Use</p>
-                            <p>Return Policy</p>
-                            <p>Discount Coupons</p>
+                            <h4>Đường dẫn</h4>
+                            <p>Chính sách bảo mật</p>
+                            <p>Điều khoản sử dụng</p>
+                            <p>Chính sách đổi trả</p>
+                            <p>Mã giảm giá</p>
                         </div>
-        
+    
                         <div class="col-md-4">
-                            <h4>Company</h4>
-                            <p>About Us</p>
-                            <p>Contact Us</p>
-                            <p>Career</p>
-                            <p>Affiliate</p>
+                            <h4>Công ty</h4>
+                            <p>Về chúng tôi</p>
+                            <p>Liên lạc với chúng tôi</p>
+                            <p>Sự nghiệp</p>
+                            <p>Hợp tác</p>
                         </div>
-        
+    
                         <div class="col-md-4">
-                            <h4>Customer care</h4>
-                            <p>Help center</p>
-                            <p>Shopping guide</p>
-                            <p>Refund policy</p>
+                            <h4>Chăm sóc khách hàng</h4>
+                            <p>Trung tâm hỗ trợ</p>
+                            <p>Hướng dẫn mua sắm</p>
+                            <p>Chính sách hoàn trả</p>
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>
             <div class="primary">
@@ -287,13 +295,14 @@
                     <div class="row  ">
                         <div class="col-md-12">
                             <h5>FOLLOW US</h5>
-                            <div class="icon">  
-                                <a title="conect with us on Facebook" id="icon"><i class="fa fa-facebook-official"></i></a>
-                                <a title="conect with us on Linkedin" id="icon"><i class="fa fa-linkedin"></i></a>
-                                <a title="conect with us on Instagram" id="icon"><i class="fa fa-instagram"></i></a>
-                                <a title="conect with us on Twitter" id="icon"><i class="fa fa-twitter" size=3em></i></a>
+                            <div class="icon">
+                                <a title="Facebook của chúng tôi" id="icon"><i class="fa fa-facebook-official"></i></a>
+                                <a title="Linkedin của chúng tôi" id="icon"><i class="fa fa-linkedin"></i></a>
+                                <a title="Instagram của chúng tôi" id="icon"><i class="fa fa-instagram"></i></a>
+                                <a title="Twitter của chúng tôi" id="icon"><i class="fa fa-twitter" size=3em></i></a>
                             </div>
-                            <p>Use of this website constitutes acceptance of the Smart Insights Terms and Privacy Policy including cookie-use
+                            <p>Sử dụng trang web này là đồng ý với điều khoản dịch vụ Smart Insight và quyền riêng tư bao 
+                                gồm thu thập cookies
                             </p>
                         </div>
                     </div>
