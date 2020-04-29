@@ -1,8 +1,9 @@
+import * as Utils from "./utils.js";
 $(document).ready(function () {
   const shippingCost = 50000;
   const fadeTime = 100; //ms
 
-  const VND = (money) => money + " VND";
+  // const VND = (money) => money + " VND";
 
   // retrieve data
   const cart = JSON.parse(sessionStorage.cart);
@@ -15,7 +16,7 @@ $(document).ready(function () {
         <td>In stock</td>
         <td class="product-quantity"><input min='0' class="form-control" type="number"
                 value="${product.quantity}" /></td>
-        <td class="product-price text-right">${product.price}</td>
+        <td class="product-price text-right">${Utils.VND(product.price).replace(' VND', "")}</td>
         <td class="product-removal"><button class="btn btn-sm btn-danger"><i
                     class="fa fa-trash"></i></button>
         </td>
@@ -29,7 +30,7 @@ $(document).ready(function () {
 
     // Row total for each item
     $(".product-row").each((i, row) => {
-      total += parseFloat($(row).children(".product-subtotal").text());
+      total += Utils.parseVND($(row).children(".product-subtotal").text());
     });
 
     // Calculate totals
@@ -38,9 +39,9 @@ $(document).ready(function () {
 
     /* Update totals display */
     $("#total, #grand-total").fadeOut(fadeTime, () => {
-      $("#total").text(VND(total));
-      $("#cart-shipping").text(VND(shipping));
-      $("#grand-total").text(VND(grandTotal));
+      $("#total").text(Utils.VND(total));
+      $("#cart-shipping").text(Utils.VND(shipping));
+      $("#grand-total").text(Utils.VND(grandTotal));
       // not yet fixed
       if (grandTotal <= 0) {
         $("#checkout").fadeOut(fadeTime, () => {
@@ -59,14 +60,14 @@ $(document).ready(function () {
   function updateQuantity(quantityInput) {
     /* Calculate line price */
     let productRow = $(quantityInput).parent().parent();
-    let price = parseFloat(productRow.children(".product-price").text());
+    let price = Utils.parseVND(productRow.children(".product-price").text());
     let quantity = $(quantityInput).val();
     let subtotal = price * quantity;
 
     /* Update line price display and recalc cart totals */
     productRow.children(".product-subtotal").each((i, row) => {
       $(row).fadeOut(fadeTime, () => {
-        $(row).text(VND(subtotal));
+        $(row).text(Utils.VND(subtotal));
         recalculateCart();
         $(row).fadeIn(fadeTime);
       });

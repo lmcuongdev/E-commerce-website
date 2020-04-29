@@ -1,6 +1,7 @@
 /* Checkout cart */
 :root {
-    --primary-color: #e454b4;
+    --primary-color: #CE5937;
+    --linear-color: -webkit-linear-gradient(top, #CE5937 0%, #C59237 100%);
 }
 
 .product-img img {

@@ -1,3 +1,4 @@
+import * as Utils from "./utils.js";
 $(".close-side").on('click', function () {
     $(".side").hide({ direction: "right" }, 2000);
 });
@@ -16,8 +17,8 @@ $(document).ready(function () {
         let product = $(this).parent().parent().parent().siblings("div");
         let nameProduct = $.trim($(product).children("h3").text());
         let index = listOfProduct.map(obj => obj['name']).indexOf(nameProduct);
-        // get rid of $ sign
-        let price = parseFloat($(product).children("h5").html().substr(1));
+
+        let price = Utils.parseVND($(product).children("h5").html());
         if (index === -1) {
             let img = $(this).parents(".product-top").children().children("img");
             let sizeName = product.html().replace("h3", "h6").replace("h5", "h7");
@@ -34,7 +35,7 @@ $(document).ready(function () {
             });
         }
         sum += price;
-        $('.total .float-right').text(sum);
+        $('.total .float-right').text(Utils.VND(sum));
 
         $("#quantity").text(parseInt($("#quantity").text()) + 1);
     });
@@ -42,7 +43,7 @@ $(document).ready(function () {
     // remove item
     $(document).on("click", ".cart-list li[class!='total ']", function () {
         let subMoney = $(this).children("h7").html();
-        sum -= parseFloat(subMoney.substr(1));
+        sum -= Utils.parseVND(subMoney);
         $('.total .float-right').text(sum);
         $("#quantity").text(parseInt($("#quantity").text()) - 1);
 

@@ -7,7 +7,9 @@
 }
 
 :root {
-    --primary-color: #e454b4;
+    --primary-color: #CE5937;
+    --linear-color: -webkit-linear-gradient(top, #CE5937 0%, #C59237 100%);
+    --hover-color: -webkit-linear-gradient(top, #CE5937 0%, #ad7c25 100%);
 }
 
 html {
@@ -65,7 +67,8 @@ body {
     max-width: 280px;
     position: fixed;
     z-index: 3;
-    background-color: gray;
+    background-color: #e2e2e298;
+    border-radius: 10px;
     display: none;
     transition: max-width 0.5s ease-out;
 }
@@ -161,7 +164,7 @@ body {
 }
 
 .input-group-text {
-    background: var(--primary-color) !important;
+    background: var(--linear-color) !important;
     border: 1px solid var(--primary-color) !important;
     margin: 8.5px 10px 3px 0 !important;
     border-top-left-radius: 0px !important;
@@ -196,7 +199,7 @@ body {
     list-style-type: none;
     padding: 15px 20px;
     text-align: center;
-    background-color: var(--primary-color);
+    background: var(--linear-color);
     cursor: pointer;
 }
 
@@ -208,7 +211,7 @@ body {
 }
 
 .menu-bar ul li:hover {
-    background-color: #c06286bb;
+    background: var(--hover-color)
 }
 
 .fa-shopping-basket {
@@ -383,38 +386,30 @@ body {
     transition: all 0.3s linear;
 }
 
-.product img{
+.product img {
     margin-top: 12px;
     height: 250px;
     width: 200px;
 }
+
 .product:hover {
     box-shadow: 1px 5px 25px #ccc;
     transform: translateY(-10px);
 }
 
 .title-box {
-    background: var(--primary-color);
+    background: var(--linear-color);
     color: #fff;
     width: 180px;
     padding: 4px 10px;
     height: 40px;
     margin-bottom: 30px;
     display: flex;
+    border-top-right-radius: 50px;
 }
 
 .title-box h2 {
     font-size: 24px;
-}
-
-.title-box::after {
-    content: '';
-    border-top: 40px solid var(--primary-color);
-    border-right: 50px solid transparent;
-    position: absolute;
-    display: flex;
-    margin-top: -4px;
-    margin-left: 170px;
 }
 
 
@@ -448,7 +443,7 @@ body {
 
 .overlay-right .fa:hover {
     color: white;
-    background-color: var(--primary-color);
+    background: var(--linear-color);
 }
 
 .overlay-right .btn-secondary {
@@ -467,7 +462,7 @@ body {
 /*--------------Product-bottom-CSS---------------*/
 
 .product-bottom .fa {
-    color: var(--primary-color);
+    color: #f5c43f;
     font-size: 10px;
 }
 
@@ -513,7 +508,7 @@ body {
 .footer {
     margin-top: 50px;
     color: #fff;
-    background-color: rgb(14, 13, 13);
+    background-color: rgb(24, 16, 5);
 
 }
 
@@ -556,70 +551,6 @@ body {
 }
 
 
-/*----------------single-product---------------*/
-
-.single-product {
-    margin-top: 70px;
-}
-
-.new-arrival {
-    background: green;
-    width: 50px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.col-md-7 h2 {
-    color: #555;
-}
-
-.single-product .fa {
-    color: var(--primary-color);
-}
-
-.single-product .price {
-    color: var(--primary-color);
-    font-size: 26px;
-    font-weight: bold;
-    padding-top: 20px;
-}
-
-.single-product input {
-    border: 1px solid #ccc;
-    font-weight: bold;
-    height: 33px;
-    text-align: center;
-    width: 30px;
-}
-
-.single-product .btn-primary {
-    background: var(--primary-color) !important;
-    color: #fff;
-    font-size: 15px;
-    margin-left: 20px;
-    border: none;
-    box-shadow: none !important;
-}
-
-
-/*--------------product-description---------------*/
-
-.product-description h6 {
-    margin-top: 50px;
-    color: var(--primary-color);
-}
-
-.product-description p {
-    margin-top: 30px;
-}
-
-.product-description hr {
-    margin-bottom: 50px;
-}
-
-
 /*--------------------GoTo Top Button--------------*/
 
 .back-to-top {
@@ -643,14 +574,17 @@ body {
 }
 
 #filter .btn {
-    border: 1px solid rgb(97, 92, 92);
+    /* border: 1px solid rgb(97, 92, 92); */
     transition: all 0.2s ease-in;
+    box-shadow: none;
 }
 
 #filter .btn-default:hover {
-    background-color: rgb(179, 176, 171);
+    background-color: #e29477c2;
 }
 
 #filter .btn-default:focus {
-    background-color: rgb(179, 176, 171);
+    background-color: #ff7f50;
+    -webkit-box-shadow: 0px 1px 20px -3px #818181c9;
+    box-shadow: 0px 1px 20px -3px #818181c9;
 }
