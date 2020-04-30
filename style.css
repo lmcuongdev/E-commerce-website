@@ -32,6 +32,12 @@ body {
     z-index: 2;
 }
 
+.toast-header {
+    height: 70px;
+    width: 290px;
+    opacity: 0.8;
+}
+
 #sel {
     width: 40%;
     top: 47px;
@@ -59,7 +65,9 @@ body {
     border-bottom-right-radius: 20px;
 }
 
+
 /*----------------Quick checkout menu--------------*/
+
 .side {
     right: 0;
     top: 0;
@@ -223,20 +231,16 @@ body {
         height: 118px;
         border-bottom: 0;
     }
-
     .search-box {
         width: 100%;
     }
-
     .menu-bar {
         width: 100%;
     }
-
     .menu-bar ul {
         margin: 10px 0;
         width: 100%;
     }
-
     .menu-bar ul li {
         height: 58px;
         width: 100%;
@@ -318,15 +322,12 @@ body {
         display: none;
         background: #f1f3f4;
     }
-
     .side-menu ul li ul {
         top: 133px;
     }
-
     .side-menu ul li:hover ul {
         margin-left: 31%;
     }
-
     #menu-btn {
         display: block;
     }
@@ -509,7 +510,6 @@ body {
     margin-top: 50px;
     color: #fff;
     background-color: rgb(24, 16, 5);
-
 }
 
 .footer .primary {
