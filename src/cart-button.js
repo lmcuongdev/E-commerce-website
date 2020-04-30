@@ -1,19 +1,21 @@
 import * as Utils from "./utils.js";
-$(".close-side").on('click', function () {
+$(".close-side").on('click', function() {
     $(".side").hide({ direction: "right" }, 2000);
 });
 
-$("#cart").on('click', function () {
+$("#cart").on('click', function() {
     $(".side").show({ direction: "left" }, 2000);
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     let sum = 0;
 
     // object list
     let listOfProduct = [];
 
-    $(".on-sale .fa-shopping-cart").on('click', function () {
+    $(".on-sale .fa-shopping-cart").on('click', function() {
+        $(".toast").hide().show().delay(1500).fadeOut();
+
         let product = $(this).parent().parent().parent().siblings("div");
         let nameProduct = $.trim($(product).children("h3").text());
         let index = listOfProduct.map(obj => obj['name']).indexOf(nameProduct);
@@ -26,7 +28,7 @@ $(document).ready(function () {
 
             listOfProduct.push({ name: nameProduct, img: img.attr('src'), price: price, quantity: 1 });
         } else {
-            $(".cart-list li h6").each(function () {
+            $(".cart-list li h6").each(function() {
                 if ($(this).text() === nameProduct) {
                     const quantityUpdate = parseInt($(this).siblings("span").text()) + 1;
                     $(this).siblings("span").text(quantityUpdate);
@@ -41,7 +43,7 @@ $(document).ready(function () {
     });
 
     // remove item
-    $(document).on("click", ".cart-list li[class!='total ']", function () {
+    $(document).on("click", ".cart-list li[class!='total ']", function() {
         let subMoney = $(this).children("h7").html();
         sum -= Utils.parseVND(subMoney);
         $('.total .float-right').text(sum);
@@ -54,8 +56,7 @@ $(document).ready(function () {
         if (curQuantity > 1) {
             $(this).children(".quantityInBag").text(curQuantity - 1);
             listOfProduct[productIndex]['quantity'] = curQuantity - 1;
-        }
-        else {
+        } else {
             listOfProduct.splice(productIndex, 1);
             $(this).remove();
         }
@@ -66,6 +67,6 @@ $(document).ready(function () {
     $('.btn#complete').on('click', () => {
         // console.log(listOfProduct);
         sessionStorage.setItem('cart', JSON.stringify(listOfProduct))
-        // console.log(sessionStorage);
+            // console.log(sessionStorage);
     })
 });
