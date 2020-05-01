@@ -1,0 +1,102 @@
+<div class="container-md">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <div id="checkout-title">
+                    <h1>Giỏ hàng</h1>
+                </div>
+                <table class="table table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col">Tình trạng</th>
+                            <th scope="col" class="text-center">Số lượng</th>
+                            <th scope="col" class="text-right">Đơn giá</th>
+                            <th> </th>
+                            <th>Tổng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-right">Tên liên lạc: </td>
+                            <td class="text-left info"><input class="form-control" type="text" placeholder="Name">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="text-left">Tổng cộng</td>
+                            <td id="total" class="text-right">0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">Địa chỉ: </td>
+                            <td class="text-left info"><input class="form-control" type="text" placeholder="Address">
+                            </td>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="text-left">Phí vận chuyển</td>
+                            <td id="cart-shipping" class="text-right">0</td>
+                        <tr>
+                            <td class="text-right">Số điện thoại: </td>
+                            <td class="text-left info"><input class="form-control" type="text" placeholder="Number">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="text-left"><strong>Tổng số tiền </strong></td>
+                            <td id="grand-total" class="text-right"><strong>0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <button id="continue-shopping" class="btn btn-lg btn-block btn-outline-warning">Tiếp tục mua
+                        hàng</button>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <button id="checkout" class=" btn btn-lg btn-block btn-success text-uppercase">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="pop-up modal fade" id="congrats-popup" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-block">
+                <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-center text-uppercase">Congratulations <i
+                        class="fa fa-check-circle text-success"></i>
+                </h4>
+            </div>
+            <div class="modal-body text-center">
+                <h6 class="font-weight-normal">Bạn đã đặt hàng thành công <br>Đơn hàng sẽ được giao trrong thời gian
+                    sớm nhất</h6>
+            </div>
+            <div class="modal-footer">
+                <button id="back" class="btn btn-lg btn-block btn-outline-warning">Continue
+                    Shopping</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- <script src="src/interact.js"></script> -->
+<script src="/src/sign-up.js"></script>
+<script src="/src/filter.js"></script>
+<script src="/src/search.js"></script>
+<script type="module" src="/src/payments.js"></script>
