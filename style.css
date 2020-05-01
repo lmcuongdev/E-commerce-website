@@ -197,14 +197,14 @@ body {
 .menu-bar ul li {
     border-left: 1px solid #fff;
     list-style-type: none;
-    padding: 15px 20px;
+    padding: 15px 10px;
     text-align: center;
     background: var(--linear-color);
     cursor: pointer;
 }
 
 .menu-bar ul li a {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: #fff;
     text-decoration: none;
@@ -238,8 +238,10 @@ body {
     }
 
     .menu-bar ul li {
-        height: 58px;
+        font-size: 13px;
+        height: 62px;
         width: 100%;
+        padding: 17px 8px 17px 8px;
     }
 }
 
@@ -341,11 +343,11 @@ body {
     padding: 0 10px;
 }
 
-.carousel {
+.slider .carousel {
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
 
-.carousel-indicators {
+.slider .carousel-indicators {
     z-index: 1 !important;
 }
 
