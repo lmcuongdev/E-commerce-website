@@ -7,21 +7,24 @@ $(document).ready(function () {
 
   // retrieve data
   const cart = JSON.parse(sessionStorage.cart);
-  console.log(cart);
   for (const product of cart) {
-    $('table.table tbody').prepend(
+    $("table.table tbody").prepend(
       `<tr class="product-row">
         <td class="product-img"><img src="${product.img}" /> </td>
         <td class="product-name">${product.name}</td>
         <td>In stock</td>
         <td class="product-quantity"><input min='0' class="form-control" type="number"
                 value="${product.quantity}" /></td>
-        <td class="product-price text-right">${Utils.VND(product.price).replace(' VND', "")}</td>
+        <td class="product-price text-right">${Utils.VND(product.price).replace(
+          " VND",
+          ""
+        )}</td>
         <td class="product-removal"><button class="btn btn-sm btn-danger"><i
                     class="fa fa-trash"></i></button>
         </td>
         <td class="product-subtotal text-right">0</td>
-      </tr>`);
+      </tr>`
+    );
   }
 
   //  Recalculate cart
@@ -94,7 +97,8 @@ $(document).ready(function () {
   }
 
   $("#continue-shopping,.pop-up #back").on("click", () => {
-    location.href = location.href.replace("payments.html", "index.html");
+    console.log(location);
+    location.pathname = "/";
   });
 
   $("#checkout").on("click", function () {
@@ -105,5 +109,4 @@ $(document).ready(function () {
   $(".product-quantity input").each((i, input) => {
     updateQuantity(input);
   });
-
 });
