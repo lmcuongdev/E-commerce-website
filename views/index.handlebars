@@ -245,10 +245,11 @@
         </div>
         <br>
         <div class="row " id="listProduct">
-            <div class="product product-show col-md-3 col-sm-4 filter dongho">
+            {{#each products}}
+            <div class="product product-show col-md-3 col-sm-4 filter {{this.productLine}}">
                 <div class="each-item ">
                     <div class="product-top ">
-                        <a href="/product "><img src="images/mi_band_4.jpg "></a>
+                        <a href="/product/{{this.productId}} "><img src="images/{{this.img}}"></a>
                         <div class="overlay-right ">
                             <button type="button " class="btn btn-secondary " title="Mua nhanh ">
                                 <i class="fa fa-eye "></i>
@@ -267,13 +268,13 @@
                         <i class="fa fa-star "></i>
                         <i class="fa fa-star "></i>
                         <i class="fa fa-star-half-o "></i>
-                        <h3>Mi Band 4</h3>
-                        <h5 class="unit-cost">1000000</h5>
+                        <h3>{{this.productName}}</h3>
+                        <h5 class="unit-cost">{{this.price}}</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="product col-md-3 col-sm-4 filter laptop ">
+            {{/each}}
+            {{!-- <div class="product col-md-3 col-sm-4 filter laptop ">
                 <div class="each-item ">
                     <div class="product-top ">
                         <a href="/product "><img src="images/acer_aspire_a315.jpg "></a>
@@ -636,7 +637,7 @@
                         <h5 class="unit-cost">800000</h5>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
