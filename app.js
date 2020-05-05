@@ -2,20 +2,40 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const connection = require("./mysql");
+const fs = require("fs");
+const path = require("path");
 
 const PORT = process.env.PORT || 5000;
 
 const app = express();
 
 // use handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+  })
+);
 app.set("view engine", "handlebars");
 
 const products = [];
 connection.query(`SELECT * FROM products`, (err, rows, fields) => {
   if (err) console.log(`Query error: ${err}`);
   else {
-    products.push(...rows);
+    products.push(
+      ...rows.map((row) => {
+        const each = { ...row };
+        try {
+          each.imgs = fs.readdirSync(
+            path.join(__dirname, "public", "images", row.imgFolder)
+          );
+          each.cover = each.imgs[0];
+        } catch (err) {
+          console.log("Error reading images folder: " + err);
+        }
+        return each;
+      })
+    );
   }
 });
 
@@ -29,8 +49,21 @@ app.get("/payments", (req, res) => {
 app.get("/signup", (req, res) => {
   res.render("signup", { title: "Sign up", style: "signupstyle.css" });
 });
-app.get("/product", (req, res) => {
-  res.render("product", { title: "Product", style: "product.css" });
+app.get("/product/:id", (req, res) => {
+  const i = parseInt(req.params.id) - 1;
+  res.render("product", {
+    title: `Product`,
+    style: "product.css",
+    name: products[i].productName,
+    price: products[i].price,
+    status: products[i].quantityInstock > 0 ? "Còn hàng" : "Hết hàng",
+    brand: products[i].brand || "Apple",
+    description: products[i].productInfo,
+    images: products[i].imgs.map((name) =>
+      path.join(products[i].imgFolder, name)
+    ),
+    isFirstIndex: true,
+  });
 });
 
 app.use(express.static(__dirname + "/public"));
