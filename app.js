@@ -51,21 +51,33 @@ app.get("/signup", (req, res) => {
 });
 app.get("/product/:id", (req, res) => {
   const i = parseInt(req.params.id) - 1;
-  res.render("product", {
-    title: `Product`,
-    style: "product.css",
-    name: products[i].productName,
-    price: products[i].price,
-    status: products[i].quantityInstock > 0 ? "Còn hàng" : "Hết hàng",
-    brand: products[i].brand || "Apple",
-    description: products[i].productInfo,
-    images: products[i].imgs.map((name) =>
-      path.join(products[i].imgFolder, name)
-    ),
-    isFirstIndex: true,
-  });
+  try {
+    res.render("product", {
+      title: `Product`,
+      style: "product.css",
+      name: products[i].productName,
+      price: products[i].price,
+      status: products[i].quantityInstock > 0 ? "Còn hàng" : "Hết hàng",
+      brand: products[i].brand || "Apple",
+      description: products[i].productInfo,
+      images: products[i].imgs.map((name) =>
+        path.join(products[i].imgFolder, name)
+      ),
+      isFirstIndex: true,
+    });
+  } catch (err) {
+    console.log("Error getting product ids:");
+    console.log(err);
+    res
+      .status(404)
+      .render("404", { title: "Page not found", style: "404.css" });
+  }
 });
 
 app.use(express.static(__dirname + "/public"));
+
+app.use((req, res, next) => {
+  res.status(404).render("404", { title: "Page not found", style: "404.css" });
+});
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
