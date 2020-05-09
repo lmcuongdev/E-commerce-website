@@ -18,6 +18,9 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 const products = [];
 connection.query(`SELECT * FROM products`, (err, rows, fields) => {
   if (err) console.log(`Query error: ${err}`);
@@ -43,6 +46,10 @@ connection.query(`SELECT * FROM products`, (err, rows, fields) => {
 app.get("/", (req, res) => {
   res.render("index", { title: "E-commerce", products });
 });
+app.post("/", (req, res) => {
+  res.status(200).json({ products });
+});
+
 app.get("/payments", (req, res) => {
   res.render("payments", { title: "Checkout", style: "payments.css" });
 });
@@ -80,4 +87,9 @@ app.use((req, res, next) => {
   res.status(404).render("404", { title: "Page not found", style: "404.css" });
 });
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// const Utils = require("./public/src/utils");
+// console.log(Utils);
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});

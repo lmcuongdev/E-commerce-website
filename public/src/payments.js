@@ -3,8 +3,6 @@ $(document).ready(function () {
   const shippingCost = 50000;
   const fadeTime = 100; //ms
 
-  // const VND = (money) => money + " VND";
-
   // retrieve data
   const cart = JSON.parse(sessionStorage.cart);
   for (const product of cart) {
@@ -77,12 +75,13 @@ $(document).ready(function () {
     });
   }
 
-  // Event handler
+  // change input => update quantity
   $(".product-quantity input").on("change", (event) => {
     event.target.value = event.target.value < 0 ? 0 : event.target.value;
     updateQuantity(event.target);
   });
 
+  // remove product
   $(".product-row .product-removal .btn").on("click", function () {
     removeItem(this);
   });
@@ -96,13 +95,16 @@ $(document).ready(function () {
     });
   }
 
+  // back to main page
   $("#continue-shopping,.pop-up #back").on("click", () => {
     console.log(location);
     location.pathname = "/";
   });
 
+  // checkout => bought success
   $("#checkout").on("click", function () {
     $("#congrats-popup").modal("show");
+    sessionStorage.clear();
   });
 
   // auto calculate every time load the page
