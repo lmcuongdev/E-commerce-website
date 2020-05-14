@@ -4,7 +4,8 @@
   "description": "Assignment for Sofware Enginnering at University",
   "main": "./src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "nodemon app.js"
   },
   "repository": {
     "type": "git",

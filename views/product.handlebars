@@ -76,18 +76,19 @@
         <h2>Similar</h2>
     </div>
     <div class="row">
-        <div class="product col-md-3 col-sm-4 filter dienthoai ">
+        {{#each similar}}
+        <div class="product product-show col-md-3 col-sm-4 filter {{this.productLine}}">
             <div class="each-item ">
                 <div class="product-top ">
-                    <a href="product.html "><img src="images/iphoneX_1.jpg "></a>
+                    <a href="/product/{{this.productId}} "><img src="../images/{{this.imgFolder}}/{{this.cover}}"></a>
                     <div class="overlay-right ">
-                        <button type="button " class="btn btn-secondary " title="Quick Shop ">
+                        <button type="button " class="btn btn-secondary " title="Mua nhanh ">
                             <i class="fa fa-eye "></i>
                         </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Wishlist ">
+                        <button type="button " class="btn btn-secondary " title="Thêm vào danh sách mong muốn ">
                             <i class="fa fa-heart-o "></i>
                         </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Cart ">
+                        <button type="button " class="btn btn-secondary " title="Thêm vào giỏ hàng ">
                             <i class="fa fa-shopping-cart "></i>
                         </button>
                     </div>
@@ -97,97 +98,13 @@
                     <i class="fa fa-star "></i>
                     <i class="fa fa-star "></i>
                     <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <h3>Iphone 11</h3>
-                    <h5 class="unit-cost">19000000</h5>
+                    <i class="fa fa-star-half-o "></i>
+                    <h3>{{this.productName}}</h3>
+                    <h5 class="unit-cost">{{this.price}}</h5>
                 </div>
             </div>
         </div>
-
-        <div class="product col-md-3 col-sm-4 filter dienthoai ">
-            <div class="each-item ">
-                <div class="product-top ">
-                    <a href="product.html "><img src="images/samsung_galaxy_zflip.jpg"></a>
-                    <div class="overlay-right ">
-                        <button type="button " class="btn btn-secondary " title="Quick Shop ">
-                            <i class="fa fa-eye "></i>
-                        </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Wishlist ">
-                            <i class="fa fa-heart-o "></i>
-                        </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Cart ">
-                            <i class="fa fa-shopping-cart "></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="product-bottom text-center ">
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <h3>Samsung Galaxy Zflip</h3>
-                    <h5 class="unit-cost">7500000</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="product col-md-3 col-sm-4 filter dienthoai ">
-            <div class="each-item ">
-                <div class="product-top ">
-                    <a href="product.html "><img src="images/samsung_galaxy_s20.jpg"></a>
-                    <div class="overlay-right ">
-                        <button type="button " class="btn btn-secondary " title="Quick Shop ">
-                            <i class="fa fa-eye "></i>
-                        </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Wishlist ">
-                            <i class="fa fa-heart-o "></i>
-                        </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Cart ">
-                            <i class="fa fa-shopping-cart "></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="product-bottom text-center ">
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <h3>Samsung Galaxy S20</h3>
-                    <h5 class="unit-cost">10400000</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="product col-md-3 col-sm-4 filter dienthoai ">
-            <div class="each-item ">
-                <div class="product-top ">
-                    <a href="product.html "><img src="images/iphone8.jpg"></a>
-                    <div class="overlay-right ">
-                        <button type="button " class="btn btn-secondary " title="Quick Shop ">
-                            <i class="fa fa-eye "></i>
-                        </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Wishlist ">
-                            <i class="fa fa-heart-o "></i>
-                        </button>
-                        <button type="button " class="btn btn-secondary " title="Add to Cart ">
-                            <i class="fa fa-shopping-cart "></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="product-bottom text-center ">
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <i class="fa fa-star "></i>
-                    <h3>Iphone 8</h3>
-                    <h5 class="unit-cost">6000000</h5>
-                </div>
-            </div>
-        </div>
-
+        {{/each}}
     </div>
 </div>
 
