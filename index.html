@@ -29,7 +29,7 @@
                 </li>
                 <!-- <li><a href="#">Shop Now</a></li> -->
                 <li class="bar"><a href="#info">Về chúng tôi</a></li>
-                <li class="bar" id="sign-up"><a href="#">Đăng nhập</a></li>
+                <li class="bar" id="sign-up" data-toggle="modal" data-target="#modelId"><a href="#">Đăng nhập</a></li>
                 <li class="bar"><a href="signup.html">Đăng kí</a></li>
             </ul>
 
@@ -41,24 +41,51 @@
             </div>
         </div>
     </div>
-    <div class="sign-up-box">
-        <div class="container">
-            <form id="form-group" action="">
-                <span class="fa fa-close fa-2x"></span>
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" placeholder="Username">
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/logo.png" width="30px" height="30px" style="margin-right: 20px;">
+                    <h5 class="modal-title">Sign in</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" placeholder="Password">
+                <div class="modal-body">
+                    <div class="sign-up-box">
+                        <div class="container">
+                            <form id="form-group" action="">
+                                <div class="input-container">
+                                    <i class="fa fa-envelope icon"></i>
+                                    <input class="input-field" type="text" placeholder="Email" name="email">
+                                </div>
+
+                                <div class="input-container">
+                                    <i class="fa fa-key icon"></i>
+                                    <input class="input-field" type="password" placeholder="Password" name="psw">
+                                </div>
+                            </form>
+                            <input type="checkbox" value="checkedValue"> Remember me
+                            <button type="button" class="btn" style="width: 100%; margin-top: 20px; background-color: var(--primary-color); color: white;">Submit</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="modal-footer">
+                    <p>Have not an account yet?</p>
+                    <a href="signup.html" class="mr-auto">
+                        <span style="color: dodgerblue;">Create account</span>
+                    </a>
+                    <a href="">
+                        <span style="color: dodgerblue;">Forgot password</span>
+                    </a>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
+
 
     <div class="side pb-2">
         <a class="close-side"><i class="fa fa-times fa-2x"></i></a>

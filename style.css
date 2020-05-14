@@ -49,20 +49,30 @@ body {
     padding-bottom: 2px;
 }
 
-#form-group {
-    width: 50%;
-    top: 30%;
-    right: 20%;
-    padding: 30px 50px;
-    border: 1px solid palevioletred;
-    background-color: white;
-    display: none;
-    position: fixed;
-    z-index: 3;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+.input-container {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.icon {
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.input-field:focus {
+    border: 2px solid var(--primary-color);
 }
 
 
@@ -125,10 +135,8 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--primary-color);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     outline: none;
 }
 
