@@ -1,10 +1,10 @@
-const connection = require("./mysql");
+const db = require("./mysql");
 const fs = require("fs");
 const path = require("path");
 
 const products = [];
-connection.query(`SELECT * FROM products`, (err, rows, fields) => {
-  if (err) console.log(`Query error: ${err}`);
+db.query(`SELECT * FROM products`, (err, rows, fields) => {
+  if (err) console.log(err);
   else {
     products.push(
       ...rows.map((row) => {
