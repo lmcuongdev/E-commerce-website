@@ -16,11 +16,10 @@ loginRouter.post("/", (req, res) => {
           req.session.user = rows[0];
           console.log(rows[0].id);
           console.log("Logged in");
-          console.log(req.protocol + "://" + req.get("host") + req.originalUrl);
           res.status(200).json({ headers: req.headers, session: req.session });
         } else {
           // FIXME: this one is not done
-          res.render("404");
+          res.status(200).json({ headers: req.headers });
         }
       }
     }

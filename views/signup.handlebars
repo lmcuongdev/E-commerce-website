@@ -13,16 +13,16 @@
             <div>
                 <label class="input-label">Tên </label>
                 <input name="first_name" type="text" class="input-firstname" placeholder="Họ" required>
-                <input name="last" type="text" class="input-lastname" placeholder="Tên" required>
+                <input name="last_name" type="text" class="input-lastname" placeholder="Tên" required>
             </div>
-            <label name="address" class="input-label">Địa chỉ</label>
-            <input type="text" class="input-address" placeholder="Nhập địa chỉ" required>
+            <label class="input-label">Địa chỉ</label>
+            <input name="address" type="text" class="input-address" placeholder="Nhập địa chỉ" required>
             <p class="warning-text"> (Hãy chắc chắn bạn nhập đúng địa chỉ, nếu không đơn hàng có thể không được
                 gửi đến bạn)</p>
             <div>
                 <label class="input-label"> Ngày sinh</label>
                 <span class="input-birth">
-                    <select name="month" id="month" required>
+                    <select name="birth_month" id="month" required>
                         <option value="01">Tháng 1</option>
                         <option value="02">Tháng 2</option>
                         <option value="03">Tháng 3</option>
@@ -38,7 +38,7 @@
                     </select>
                 </span>
                 <span>
-                    <select name="day" id="day" required>
+                    <select name="birth_day" id="day" required>
                         <option value="01">1</option>
                         <option value="02">2</option>
                         <option value="03">3</option>
@@ -73,7 +73,7 @@
                     </select>
                 </span>
                 <span>
-                    <select name="year" id="year" required>
+                    <select name="birth_year" id="year" required>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>
@@ -207,7 +207,7 @@
             </label>
             <div>
                 <label class="input-label"> Điện thoại</label>
-                <input type="tel" class="input-phone" placeholder="Nhập SĐT" name="number" required>
+                <input type="tel" class="input-phone" placeholder="Nhập SĐT" name="phone" required>
             </div>
             <div>
                 <input type="submit" class="sign-button" value="Xác nhận" />

@@ -23,10 +23,14 @@ $("#form-group").submit((ev) => {
       .then((res) => {
         console.log(res);
         console.log(window.location);
-        window.location.reload();
+        if (res.session.userId) {
+          window.location.reload();
+        } else {
+          alert("Sai tài khoản hoặc mật khẩu");
+        }
       })
       .catch((err) => console.log(err));
   } else {
-    alert("Chưa nhập username và password");
+    alert("Chưa nhập tài khoản và mật khẩu");
   }
 });
