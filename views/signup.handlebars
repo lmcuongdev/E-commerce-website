@@ -1,5 +1,13 @@
 <div>
     <div class="sign-box">
+        {{#if messages}}
+        {{#each messages}}
+        <div style="text-align: center" class="alert alert-{{this.type}}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <p>{{this.message}}</p>
+        </div>
+        {{/each}}
+        {{/if}}
         <h1 class="signup-title"> Đăng kí </h1>
         <form class="signup-form" method="POST" action="/signup">
             <div>
