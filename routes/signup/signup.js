@@ -4,10 +4,13 @@ const db = require("../../mysql");
 
 const signupRoute = express.Router();
 
-const params = { title: "Sign up", style: "signupstyle.css" };
+const params = {
+  title: "Sign up",
+  style: "signupstyle.css",
+};
 
 signupRoute.get("/", (req, res) => {
-  res.render("signup", params);
+  res.render("signup", { ...params, messages: req.flash("message") });
 });
 
 signupRoute.post(
@@ -20,8 +23,11 @@ signupRoute.post(
     const errors = validationResult(req);
     // if input is not good (password not strong,...)
     if (!errors.isEmpty()) {
-      // FIXME: temp
-      res.render("404");
+      req.flash("message", {
+        type: "danger",
+        message: "Mật khẩu phải có ít nhất 5 ký tự",
+      });
+      res.redirect("/signup");
     } else {
       // parse info from POST request's body
       const {
@@ -33,7 +39,6 @@ signupRoute.post(
         gender,
         phone,
       } = req.body;
-      username = username.trim();
       // query to database
       const sql_getUser = `SELECT * FROM users WHERE username = '${username}'`;
       const sql_insertUser = `INSERT INTO users (\`username\`, \`password\`, \`first_name\`, \`last_name\`, \`phone\`, \`address\`) VALUES ('${username}', '${password}', '${first_name}', '${last_name}', '${phone}', '${address}');`;
@@ -51,6 +56,10 @@ signupRoute.post(
           if (rows.length) {
             console.log("Username exist. Please try anothere one");
             // FIXME: make redirect here
+            req.flash("message", {
+              type: "danger",
+              message: "Tên tài khoản đã được sử dụng",
+            });
             res.redirect("/signup");
           }
           // this username has never been used

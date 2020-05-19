@@ -1,7 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
+const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const flash = require("connect-flash");
 const products = require("./productList");
 
 // routes
@@ -27,17 +29,21 @@ app.set("view engine", "handlebars");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(cookieParser());
 app.use(
   session({
-    secret: "keyboard cat",
+    name: "sid",
+    secret: "secret",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 1000 * 3600, sameSite: true },
   })
 );
+app.use(flash());
 
 // make routes
 app.get("/", (req, res) => {
+  const { userId } = req.session;
   res.render("index", { title: "E-commerce", products });
 });
 app.post("/", (req, res) => {
