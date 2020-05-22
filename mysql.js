@@ -1,11 +1,7 @@
 const mysql = require("mysql");
+const options = require("./config/database");
 // connect to database
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "secret",
-  database: "e-commerce",
-});
+const connection = mysql.createConnection(options);
 
 connection.connect(function (err) {
   if (err) {

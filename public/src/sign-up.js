@@ -17,14 +17,16 @@ $("#form-group").submit((ev) => {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify({ username, password }),
     })
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
         console.log(window.location);
-        if (res.session.userId) {
-          window.location.reload();
+        if (res) {
+          if (typeof res === "string") alert(res);
+          else window.location.reload();
         } else {
           alert("Sai tài khoản hoặc mật khẩu");
         }
