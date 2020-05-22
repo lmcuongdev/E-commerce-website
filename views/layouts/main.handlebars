@@ -7,7 +7,9 @@
     <title>{{title}}</title>
     <link rel="icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/styles/style.css">
+    {{#if style}}
     <link rel="stylesheet" href="/styles/{{style}}">
+    {{/if}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -31,8 +33,12 @@
                 </li>
                 <!-- <li><a href="#">Shop Now</a></li> -->
                 <li class="bar"><a href="#info">Về chúng tôi</a></li>
+                {{#if authenticated}}
+                <li class="bar" id="logout"><a href="/logout">Đăng xuất</a></li>
+                {{else}}
                 <li class="bar" id="sign-up"><a href="#">Đăng nhập</a></li>
                 <li class="bar"><a href="/signup">Đăng kí</a></li>
+                {{/if}}
             </ul>
 
         </div>

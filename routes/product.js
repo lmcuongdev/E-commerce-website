@@ -1,6 +1,6 @@
 const express = require("express");
 const productRoute = express.Router();
-const products = require("../../productList");
+const products = require("../productList");
 const path = require("path");
 
 productRoute.get("/:id", (req, res) => {
