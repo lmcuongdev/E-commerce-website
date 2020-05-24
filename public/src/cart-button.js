@@ -49,9 +49,6 @@ $(document).ready(function () {
     }
     $(".total .float-right").text(Utils.VND(sum));
     $(".bar#cart #quantity").text(listOfProduct.length);
-    // } else {
-    //   $(".cart-list").prepend(itemHtml(img, productHtml));
-    // }
   };
 
   renderCart();

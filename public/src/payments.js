@@ -54,6 +54,7 @@ $(document).ready(function () {
       }
       $("#total, #grand-total").fadeIn(fadeTime);
     });
+    console.log(cart);
     // console.log(total, grandTotal);
   }
 
@@ -61,10 +62,13 @@ $(document).ready(function () {
   function updateQuantity(quantityInput) {
     /* Calculate line price */
     let productRow = $(quantityInput).parent().parent();
+    let name = $(productRow).children(".product-name").text();
     let price = Utils.parseVND(productRow.children(".product-price").text());
     let quantity = $(quantityInput).val();
     let subtotal = price * quantity;
 
+    let index = cart.map((each) => each.name).indexOf(name);
+    cart[index].quantity = quantity;
     /* Update line price display and recalc cart totals */
     productRow.children(".product-subtotal").each((i, row) => {
       $(row).fadeOut(fadeTime, () => {
@@ -89,6 +93,12 @@ $(document).ready(function () {
   //  Remove item from cart by removing row
   function removeItem(removeButton) {
     let productRow = $(removeButton).parent().parent();
+    // get name
+    let name = $(productRow).children(".product-name").text();
+    // get index in cart array
+    let index = cart.map((each) => each.name).indexOf(name);
+    // remove that item in cart array
+    cart.splice(index, 1);
     productRow.fadeOut(2 * fadeTime, function () {
       productRow.remove();
       recalculateCart();
@@ -103,6 +113,14 @@ $(document).ready(function () {
 
   // checkout => bought success
   $("#checkout").on("click", function () {
+    fetch("/payments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ cart }),
+    });
     $("#congrats-popup").modal("show");
     sessionStorage.clear();
   });

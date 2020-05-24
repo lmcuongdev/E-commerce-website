@@ -20,7 +20,8 @@
                     <tbody>
                         <tr>
                             <td class="text-right">Tên liên lạc: </td>
-                            <td class="text-left info"><input class="form-control" type="text" placeholder="Name">
+                            <td class="text-left info"><input class="form-control" type="text" placeholder="Name"
+                                    {{#if user}} value="{{user.first_name}} {{user.last_name}}" {{/if}}>
                             </td>
                             <td></td>
                             <td></td>
@@ -30,7 +31,8 @@
                         </tr>
                         <tr>
                             <td class="text-right">Địa chỉ: </td>
-                            <td class="text-left info"><input class="form-control" type="text" placeholder="Address">
+                            <td class="text-left info"><input class="form-control" type="text" placeholder="Address"
+                                    {{#if user}} value="{{user.address}}" {{/if}}>
                             </td>
                             </td>
                             <td></td>
@@ -40,7 +42,8 @@
                             <td id="cart-shipping" class="text-right">0</td>
                         <tr>
                             <td class="text-right">Số điện thoại: </td>
-                            <td class="text-left info"><input class="form-control" type="text" placeholder="Number">
+                            <td class="text-left info"><input class="form-control" type="text" placeholder="Number"
+                                    {{#if user}} value="{{user.phone}}" {{/if}}>
                             </td>
                             <td></td>
                             <td></td>
