@@ -8,13 +8,6 @@ const products = require("./productList");
 const passport = require("passport");
 const morgan = require("morgan");
 
-// routes
-const paymentRoute = require("./routes/payments");
-const signupRoute = require("./routes/signup");
-const loginRoute = require("./routes/login");
-const logoutRoute = require("./routes/logout");
-const productRoute = require("./routes/product");
-
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -51,24 +44,33 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(flash());
 
+app.use((req, res, next) => {
+  // app.locals.message = req.flash("message");
+  // app.locals.success = req.flash("success");
+  // console.log("Passing through this");
+  app.locals.user = req.user;
+  console.log(req.session);
+  next();
+});
+
 // make routes
 app.get("/", (req, res) => {
   const { userId } = req.session;
   res.render("index", {
     title: "E-commerce",
     products,
-    authenticated: req.isAuthenticated(),
   });
 });
 app.post("/", (req, res) => {
   res.status(200).json({ products });
 });
 
-app.use("/login", loginRoute);
-app.use("/payments", paymentRoute);
-app.use("/signup", signupRoute);
-app.use("/product", productRoute);
-app.use("/logout", logoutRoute);
+// routing
+app.use("/login", require("./routes/login"));
+app.use("/signup", require("./routes/signup"));
+app.use("/logout", require("./routes/logout"));
+app.use("/payments", require("./routes/payments"));
+app.use("/product", require("./routes/product"));
 app.use((req, res, next) => {
   res.status(404).render("404", { title: "Page not found", style: "404.css" });
 });

@@ -9,11 +9,13 @@ const VND = (money) => {
 };
 const parseVND = (money) => Number(parseFloat(money.replace(/\./g, "")));
 const products = [];
-const req = $.ajax({
-  url: "/",
+
+fetch("/", {
   method: "POST",
-  dataType: "json",
-  success: (res) => products.push(...res.products),
-  error: () => console.log("Ajax post request fail"),
-});
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+  .then((res) => res.json())
+  .then((res) => products.push(...res.products));
 export { VND, parseVND, products };
