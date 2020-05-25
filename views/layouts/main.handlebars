@@ -16,6 +16,62 @@
 
 
 <body>
+    <div class="side pb-2">
+        <a class="close-side"><i class="fa fa-times fa-2x"></i></a>
+        <div class="cart-box" style="list-style-type: none;">
+            <ul class="cart-list">
+                <li class="total ">
+                    <span style="font-size: large;"><strong>Tổng: </strong></span>
+                    <h5 class="float-right " style="font-size: larger;">0</h5>
+                </li>
+            </ul>
+        </div>
+        <div class="text-center">
+            <button id="complete" class="btn btn-primary"><a href="/payments">Thanh toán</a></button>
+        </div>
+    </div>
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/logo.png" width="30px" height="30px" style="margin-right: 20px;">
+                    <h5 class="modal-title">Sign in</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="sign-up-box">
+                        <div class="container">
+                            <form id="form-group" action="">
+                                <div class="input-container">
+                                    <i class="fa fa-envelope icon"></i>
+                                    <input class="input-field" type="text" placeholder="Username" name="username">
+                                </div>
+
+                                <div class="input-container">
+                                    <i class="fa fa-key icon"></i>
+                                    <input class="input-field" type="password" placeholder="Password" name="password">
+                                </div>
+                                <button type="submit" class="btn"
+                                    style="width: 100%; margin-top: 20px; background-color: var(--primary-color); color: white;">Submit</button>
+                            </form>
+                            <input type="checkbox" value="checkedValue"> Remember me
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p>Have not an account yet?</p>
+                    <a href="/signup" class="mr-auto">
+                        <span style="color: dodgerblue;">Create account</span>
+                    </a>
+                    <a href="">
+                        <span style="color: dodgerblue;">Forgot password</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="top-nav-bar">
         <div class="search-box">
             <i class="fa fa-bars" id="menu-btn"></i>
@@ -36,7 +92,7 @@
                 {{#if user}}
                 <li class="bar" id="logout"><a href="/logout">Đăng xuất</a></li>
                 {{else}}
-                <li class="bar" id="sign-up"><a href="#">Đăng nhập</a></li>
+                <li class="bar" id="sign-up" data-toggle="modal" data-target="#modelId"><a href="#">Đăng nhập</a></li>
                 <li class="bar"><a href="/signup">Đăng kí</a></li>
                 {{/if}}
             </ul>
@@ -86,11 +142,13 @@
                 <div class="row  ">
                     <div class="col-md-12">
                         <h5>FOLLOW US</h5>
-                        <div class="icon">
-                            <a title="Facebook của chúng tôi" id="icon"><i class="fa fa-facebook-official"></i></a>
-                            <a title="Linkedin của chúng tôi" id="icon"><i class="fa fa-linkedin"></i></a>
-                            <a title="Instagram của chúng tôi" id="icon"><i class="fa fa-instagram"></i></a>
-                            <a title="Twitter của chúng tôi" id="icon"><i class="fa fa-twitter" size=3em></i></a>
+                        <div id="brand_icons">
+                            <a title="Facebook của chúng tôi" class="brand_icon"><i
+                                    class="fa fa-facebook-official"></i></a>
+                            <a title="Linkedin của chúng tôi" class="brand_icon"><i class="fa fa-linkedin"></i></a>
+                            <a title="Instagram của chúng tôi" class="brand_icon"><i class="fa fa-instagram"></i></a>
+                            <a title="Twitter của chúng tôi" class="brand_icon"><i class="fa fa-twitter"
+                                    size=3em></i></a>
                         </div>
                         <p>Sử dụng trang web này là đồng ý với điều khoản dịch vụ Smart Insight và quyền riêng tư bao
                             gồm thu thập cookies
@@ -104,6 +162,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> --}}
     {{!-- <script type="module" src="../../src/interact.js "></script> --}}
+    <script src="/src/login.js "></script>
+    <script type="module" src="/src/cart-button.js "></script>
+
 </body>
 
 </html>

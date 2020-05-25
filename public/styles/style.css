@@ -49,20 +49,30 @@ body {
     padding-bottom: 2px;
 }
 
-#form-group {
-    width: 50%;
-    top: 30%;
-    right: 20%;
-    padding: 30px 50px;
-    border: 1px solid palevioletred;
-    background-color: white;
-    display: none;
-    position: fixed;
-    z-index: 3;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+.input-container {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.icon {
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.input-field:focus {
+    border: 2px solid var(--primary-color);
 }
 
 
@@ -125,8 +135,8 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--primary-color);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    /* border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px; */
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     outline: none;
@@ -231,16 +241,20 @@ body {
         height: 118px;
         border-bottom: 0;
     }
+
     .search-box {
         width: 100%;
     }
+
     .menu-bar {
         width: 100%;
     }
+
     .menu-bar ul {
         margin: 10px 0;
         width: 100%;
     }
+
     .menu-bar ul li {
         font-size: 13px;
         height: 62px;
@@ -324,12 +338,15 @@ body {
         display: none;
         background: #f1f3f4;
     }
+
     .side-menu ul li ul {
         top: 133px;
     }
+
     .side-menu ul li:hover ul {
         margin-left: 31%;
     }
+
     #menu-btn {
         display: block;
     }
@@ -543,11 +560,11 @@ body {
     font-size: 45px;
 }
 
-.icon {
+#brand_icons {
     padding-bottom: 10px;
 }
 
-#icon:hover {
+#brand_icons .brand_icon:hover {
     color: var(--primary-color);
     cursor: pointer;
 }
