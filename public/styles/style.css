@@ -135,8 +135,15 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--primary-color);
+<<<<<<< HEAD
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+=======
+    /* border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+>>>>>>> minor refactor
     outline: none;
 }
 
@@ -239,16 +246,20 @@ body {
         height: 118px;
         border-bottom: 0;
     }
+
     .search-box {
         width: 100%;
     }
+
     .menu-bar {
         width: 100%;
     }
+
     .menu-bar ul {
         margin: 10px 0;
         width: 100%;
     }
+
     .menu-bar ul li {
         font-size: 13px;
         height: 62px;
@@ -332,12 +343,15 @@ body {
         display: none;
         background: #f1f3f4;
     }
+
     .side-menu ul li ul {
         top: 133px;
     }
+
     .side-menu ul li:hover ul {
         margin-left: 31%;
     }
+
     #menu-btn {
         display: block;
     }
@@ -551,11 +565,11 @@ body {
     font-size: 45px;
 }
 
-.icon {
+#brand_icons {
     padding-bottom: 10px;
 }
 
-#icon:hover {
+#brand_icons .brand_icon:hover {
     color: var(--primary-color);
     cursor: pointer;
 }
