@@ -28,6 +28,21 @@ paymentRouter.post("/", (req, res) => {
           orderLineNumber: i + 1,
         };
         await db.query("INSERT INTO orderdetails SET ?", orderDetail);
+        // update quantity
+        await db.query(
+          "SELECT quantityInstock FROM products WHERE (`productId` = ?)",
+          [one.id],
+          async (err, rows, field) => {
+            if (err) console.log(err);
+            else {
+              const newQuantity = rows[0]["quantityInstock"] - one.quantity;
+              await db.query(
+                "UPDATE `products` SET `quantityInstock` = ? WHERE (`productId` = ?);",
+                [newQuantity, one.id]
+              );
+            }
+          }
+        );
       });
       await db.query("INSERT INTO payments SET ?", {
         userId: req.user.id,
