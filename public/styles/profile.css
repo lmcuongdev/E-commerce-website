@@ -203,3 +203,9 @@ a.list-group-item,
     background-color: transparent;
     content: '';
 }
+
+/* Input panel */
+
+form.row .row {
+    margin: 0;
+}

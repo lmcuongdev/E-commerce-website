@@ -1,3 +1,6 @@
+{{#if isAjax}}
+{{{body}}}
+{{else}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +39,7 @@
                 <!-- <li><a href="#">Shop Now</a></li> -->
                 <li class="bar"><a href="#info">Về chúng tôi</a></li>
                 {{#if user}}
+                <li class="bar" id="profile"><a href="/account">Tài khoản</a></li>
                 <li class="bar" id="logout"><a href="/logout">Đăng xuất</a></li>
                 {{else}}
                 <li class="bar" id="sign-up" data-toggle="modal" data-target="#modelId"><a href="#">Đăng nhập</a></li>
@@ -179,3 +183,4 @@
 </body>
 
 </html>
+{{/if}}
