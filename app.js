@@ -45,11 +45,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(flash());
 
 app.use((req, res, next) => {
-  // app.locals.message = req.flash("message");
+  app.locals.messages = req.flash("messages");
   // app.locals.success = req.flash("success");
   // console.log("Passing through this");
   app.locals.user = req.user;
-  console.log(req.session);
+  // console.log(req.session);
   next();
 });
 
@@ -71,7 +71,7 @@ app.use("/signup", require("./routes/signup"));
 app.use("/logout", require("./routes/logout"));
 app.use("/payments", require("./routes/payments"));
 app.use("/product", require("./routes/product"));
-app.use("/account", require("./routes/profile"));
+app.use("/account", require("./routes/account"));
 app.use((req, res, next) => {
   res.status(404).render("404", { title: "Page not found", style: "404.css" });
 });

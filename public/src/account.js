@@ -13,6 +13,7 @@ $(document).ready(() => {
     })
       .then((res) => res.text())
       .then((res) => $("#form-pane").html(res));
+    $("form.row").attr("action", "/account/profile");
   });
   $("#toPassword").on("click", (ev) => {
     ev.preventDefault();
@@ -24,5 +25,6 @@ $(document).ready(() => {
     })
       .then((res) => res.text())
       .then((res) => $("#form-pane").html(res));
+    $("form.row").attr("action", "/account/password");
   });
 });
