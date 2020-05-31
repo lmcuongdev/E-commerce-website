@@ -1,0 +1,23 @@
+<div class="table-responsive">
+    <table id="mytable" class="table table-bordered table-striped table-hover">
+        <thead class="text-center">
+            <th>Mã đơn</th>
+            <th>Tên sản phẩm</th>
+            <th>Tổng tiền</th>
+            <th>Ngày mua</th>
+            <th>Trạng thái đơn hàng</th>
+        </thead>
+        <tbody>
+            {{#each rows}}
+            <tr>
+                <td>{{this.orderId}}</td>
+                <td>{{this.productName}}</td>
+                <td>{{this.total}}</td>
+                <td>{{this.orderDate}}</td>
+                <td>{{this.status}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>

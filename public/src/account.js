@@ -3,6 +3,7 @@ $(document).ready(() => {
     $(".list-group-item").removeClass("active");
     $(ev.target).addClass("active");
   });
+
   $("#toProfile").on("click", (ev) => {
     ev.preventDefault();
     window.history.pushState("", "", "/account/profile");
@@ -12,9 +13,10 @@ $(document).ready(() => {
       },
     })
       .then((res) => res.text())
-      .then((res) => $("#form-pane").html(res));
+      .then((res) => $("div.col-lg-8.pb-5").html(res));
     $("form.row").attr("action", "/account/profile");
   });
+
   $("#toPassword").on("click", (ev) => {
     ev.preventDefault();
     window.history.pushState("", "", "/account/password");
@@ -24,7 +26,19 @@ $(document).ready(() => {
       },
     })
       .then((res) => res.text())
-      .then((res) => $("#form-pane").html(res));
+      .then((res) => $("div.col-lg-8.pb-5").html(res));
     $("form.row").attr("action", "/account/password");
+  });
+
+  $("#toHistory").on("click", (ev) => {
+    ev.preventDefault();
+    window.history.pushState("", "", "/account/history");
+    fetch("/account/history", {
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    })
+      .then((res) => res.text())
+      .then((res) => $("div.col-lg-8.pb-5").html(res));
   });
 });

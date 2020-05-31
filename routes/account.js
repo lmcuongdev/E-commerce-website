@@ -6,6 +6,11 @@ const accountRouter = express.Router();
 
 const promiseDB = promisify(db.query.bind(db));
 
+const getStatus = {
+  "In process": "Đang giao hàng",
+  Shipped: "Đã giao hàng",
+  Cancelled: "Đã hủy",
+};
 accountRouter.use("/", isLoggedIn);
 
 accountRouter.get("/", (req, res) => {
@@ -103,4 +108,47 @@ accountRouter.post("/password", async (req, res) => {
   res.redirect("/account/password");
 });
 
+accountRouter.get("/history", async (req, res) => {
+  // go to database to get history
+  await promiseDB(`
+SELECT 
+    od.orderId,
+    p.productName,
+    p.price*
+    ode.quantity as total,
+    od.orderDate,
+    od.status
+FROM
+    orders od
+        INNER JOIN
+    (orderdetails ode
+      INNER JOIN products 
+    p ON ode.productid = p.productid) 
+    ON od.orderid = ode.orderid
+WHERE
+    userid = ${req.user.id}`)
+    .then((rows) =>
+      rows.map((r) => ({
+        ...r,
+        status: getStatus[r.status],
+        orderDate: r.orderDate.toLocaleDateString(),
+      }))
+    )
+    .then((rows) => {
+      // if it's ajax request, send a partial view only
+      if (req.xhr) {
+        res.render("partials/history", { isAjax: true, rows });
+      }
+      // if not, send whole page
+      else {
+        res.render("account", {
+          title: "My Account",
+          style: "profile.css",
+          rows,
+          history: true,
+        });
+      }
+    })
+    .catch((err) => console.log(err));
+});
 module.exports = accountRouter;

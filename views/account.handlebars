@@ -28,10 +28,9 @@
                         Settings</a>
                     <a id="toPassword" class="list-group-item {{#if password}} active {{/if}}"
                         href="/account/password"><i class="fe-icon-map-pin text-muted"></i>Password</a>
-                    <a id="toHistory" class="list-group-item" href=""><i
+                    <a id="toHistory" class="list-group-item" href="/account/history"><i
                             class="fe-icon-map-pin text-muted"></i>History</a>
-                    <a id="toHistory" class="list-group-item" href=""><i
-                            class="fe-icon-map-pin text-muted"></i>Wishlist</a>
+                    <a id="toFav" class="list-group-item" href=""><i class="fe-icon-map-pin text-muted"></i>Wishlist</a>
                     {{!-- <a class="list-group-item" href="#">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -64,37 +63,13 @@
         </div>
         <!-- Profile Settings-->
         <div class="col-lg-8 pb-5">
-            <form class="row" action="/account/{{#if profile}}profile{{else password}}password{{/if}}" method="post">
-                {{#each messages}}
-                <div class="col-12 text-center alert alert-{{this.type}} fade show" role="alert">
-                    <span>{{this.message}}</span>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                {{/each}}
-                <div class="row col-12" id="form-pane">
-                    {{#if profile}}
-                    {{>profile}}
-                    {{else password}}
-                    {{>password}}
-                    {{/if}}
-                </div>
-                {{!-- Update Button --}}
-                <div class="col-12">
-                    <hr class="mt-2 mb-3">
-                    <div class="d-flex flex-wrap justify-content-center align-items-center">
-                        {{!-- <div class="custom-control custom-checkbox d-block">
-                            <input class="custom-control-input" type="checkbox" id="subscribe_me" checked="">
-                            <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
-                        </div> --}}
-                        <button class="btn btn-style-1 btn-primary" type="submit" data-toast=""
-                            data-toast-position="topRight" data-toast-type="success"
-                            data-toast-icon="fe-icon-check-circle" data-toast-title="Success!"
-                            data-toast-message="Your profile updated successfuly.">Update Profile</button>
-                    </div>
-                </div>
-            </form>
+            {{#if profile}}
+            {{>profile}}
+            {{else password}}
+            {{>password}}
+            {{else history}}
+            {{>history}}
+            {{/if}}
         </div>
     </div>
 </div>
