@@ -3,7 +3,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../images/img-1.jpeg);
+    background: aliceblue;
+    /* background-image: url(../images/img-1.jpeg); */
     background-size: cover;
     background-position: center;
 }

@@ -117,7 +117,8 @@ SELECT
     p.price*
     ode.quantity as total,
     od.orderDate,
-    od.status
+    od.status,
+    p.productId
 FROM
     orders od
         INNER JOIN

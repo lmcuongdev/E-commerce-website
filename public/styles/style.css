@@ -18,6 +18,7 @@ html {
 
 body {
     font-family: sans-serif;
+    min-height: 100%;
 }
 
 .top-nav-bar {
@@ -135,14 +136,14 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--primary-color);
-    <<<<<<< HEAD border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    =======
+
     /* border-top-left-radius: 20px;
     border-bottom-left-radius: 20px; */
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    >>>>>>>minor refactor outline: none;
+    outline: none;
 }
 
 #form-group span {
@@ -184,7 +185,17 @@ body {
     color: rgba(0, 0, 0, .87) !important;
 }
 
-.input-group-text {
+.search-box #search-form {
+    width: 100%;
+    display: flex;
+}
+
+#search-form #myInput {
+    width: 93%;
+}
+
+#search-form .input-group-text {
+    width: 7%;
     background: var(--linear-color) !important;
     border: 1px solid var(--primary-color) !important;
     margin: 8.5px 10px 3px 0 !important;
@@ -529,7 +540,9 @@ body {
 /*--------------footer---------------*/
 
 .footer {
-    margin-top: 50px;
+    clear: both;
+    position: relative;
+    margin-top: 100px;
     color: #fff;
     background-color: rgb(24, 16, 5);
 }

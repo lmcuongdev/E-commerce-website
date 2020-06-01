@@ -11,7 +11,7 @@
             {{#each rows}}
             <tr>
                 <td>{{this.orderId}}</td>
-                <td>{{this.productName}}</td>
+                <td><a href="/product/{{this.productId}}">{{this.productName}}</a></td>
                 <td>{{this.total}}</td>
                 <td>{{this.orderDate}}</td>
                 <td>{{this.status}}</td>

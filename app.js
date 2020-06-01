@@ -72,6 +72,7 @@ app.use("/logout", require("./routes/logout"));
 app.use("/payments", require("./routes/payments"));
 app.use("/product", require("./routes/product"));
 app.use("/account", require("./routes/account"));
+app.use("/search", require("./routes/search"));
 app.use((req, res, next) => {
   res.status(404).render("404", { title: "Page not found", style: "404.css" });
 });
