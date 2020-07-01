@@ -1,0 +1,55 @@
+<form class="row" action="/account/profile" method="post">
+    {{#each messages}}
+    <div class="col-12 text-center alert alert-{{this.type}} fade show" role="alert">
+        <span>{{this.message}}</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {{/each}}
+    <div class="row col-12" id="form-pane">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="account-fn">Username</label>
+                <input class="form-control" type="text" id="account-fn" value="{{user.username}}" disabled="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="account-ln">Email</label>
+                <input class="form-control" type="email" id="account-ln" name="email"
+                    value="{{#if user.email}}{{user.email}}{{/if}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="account-fn">First Name</label>
+                <input class="form-control" type="text" id="account-fn" value="{{user.first_name}}" name="first_name"
+                    required="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="account-ln">Last Name</label>
+                <input class="form-control" type="text" id="account-ln" value="{{user.last_name}}" name="last_name"
+                    required="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="account-phone">Phone Number</label>
+                <input class="form-control" type="text" id="account-phone" value="{{user.phone}}" name="phone"
+                    required="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="account-email">Address</label>
+                <input class="form-control" type="text" id="account-email" value="{{user.address}}" name="address"
+                    required="">
+            </div>
+        </div>
+    </div>
+    {{!-- Update Button --}}
+    {{>submitButton}}
+</form>

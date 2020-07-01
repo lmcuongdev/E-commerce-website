@@ -1,0 +1,39 @@
+{{>sidemenu}}
+<div id="search-pane" class="container-md">
+    <h1 id="search-title">Kết quả tìm kiếm cho '{{keyword}}':</h1>
+    <div class="row" id="listProduct">
+        {{#each products}}
+        <div class="product product-show col-md-3 col-sm-4 filter {{this.productLine}}">
+            <div class="each-item ">
+                <div class="product-top ">
+                    <a href="/product/{{this.productId}} "><img src="images/{{this.imgFolder}}/{{this.cover}}"></a>
+                    <div class="overlay-right ">
+                        <button type="button " class="btn btn-secondary " title="Mua nhanh ">
+                            <i class="fa fa-eye "></i>
+                        </button>
+                        <button type="button " class="btn btn-secondary " title="Thêm vào danh sách mong muốn ">
+                            <i class="fa fa-heart-o "></i>
+                        </button>
+                        <button type="button " class="btn btn-secondary " title="Thêm vào giỏ hàng ">
+                            <i class="fa fa-shopping-cart "></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-bottom text-center ">
+                    <i class="fa fa-star "></i>
+                    <i class="fa fa-star "></i>
+                    <i class="fa fa-star "></i>
+                    <i class="fa fa-star "></i>
+                    <i class="fa fa-star-half-o "></i>
+                    <h3>{{this.productName}}</h3>
+                    <h5 class="unit-cost">{{this.price}}</h5>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" defer></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" defer></script>

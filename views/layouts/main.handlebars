@@ -1,3 +1,6 @@
+{{#if isAjax}}
+{{{body}}}
+{{else}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +14,50 @@
     <link rel="stylesheet" href="/styles/{{style}}">
     {{/if}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 
 <body>
+    {{!-- Navigation bar --}}
+    <div class="top-nav-bar">
+        <div class="search-box">
+            <i class="fa fa-bars" id="menu-btn"></i>
+            <i class="fa fa-times" id="close-btn"></i>
+
+            <a href="/"><img src="../images/logo.png" class="logo"></a>
+            <form id="search-form" action="/search" method="GET">
+                <input id="myInput" type="text" class="form-control" placeholder="Tìm kiếm" name="keyword">
+                <button type="submit" class="input-group-text"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu-bar">
+            <ul>
+                <li class="bar" id="cart"><a href="#"><i class="fa fa-shopping-basket"></i>Giỏ hàng</a>
+                    <span id="quantity" style="color: white;">0</span>
+                </li>
+                <!-- <li><a href="#">Shop Now</a></li> -->
+                <li class="bar"><a href="#info">Về chúng tôi</a></li>
+                {{#if user}}
+                <li class="bar" id="profile"><a href="/account">Tài khoản</a></li>
+                <li class="bar" id="logout"><a href="/logout">Đăng xuất</a></li>
+                {{else}}
+                <li class="bar" id="sign-up" data-toggle="modal" data-target="#modelId"><a href="#">Đăng nhập</a></li>
+                <li class="bar"><a href="/signup">Đăng kí</a></li>
+                {{/if}}
+            </ul>
+
+        </div>
+        <div class="toast fade show" data-autohide="false" style="position: absolute; right: 0px; display: none;">
+            <div class="toast-header">
+                <span class="fa fa-check-circle mr-2 text-success"></span>
+                <strong class="mr-auto text-success">Thêm vào giỏ hàng thành công!</strong>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Quick cart --}}
     <div class="side pb-2">
         <a class="close-side"><i class="fa fa-times fa-2x"></i></a>
         <div class="cart-box" style="list-style-type: none;">
@@ -30,11 +72,13 @@
             <button id="complete" class="btn btn-primary"><a href="/payments">Thanh toán</a></button>
         </div>
     </div>
+
+    {{!-- Popup Login Form--}}
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img src="images/logo.png" width="30px" height="30px" style="margin-right: 20px;">
+                    <img src="../images/logo.png" width="30px" height="30px" style="margin-right: 20px;">
                     <h5 class="modal-title">Sign in</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -46,15 +90,18 @@
                             <form id="form-group" action="">
                                 <div class="input-container">
                                     <i class="fa fa-envelope icon"></i>
-                                    <input class="input-field" type="text" placeholder="Username" name="username">
+                                    <input class="input-field" type="text" placeholder="Username" name="username"
+                                        autocomplete="username">
                                 </div>
 
                                 <div class="input-container">
                                     <i class="fa fa-key icon"></i>
-                                    <input class="input-field" type="password" placeholder="Password" name="password">
+                                    <input class="input-field" type="password" placeholder="Password" name="password"
+                                        autocomplete="current-password">
                                 </div>
                                 <button type="submit" class="btn"
-                                    style="width: 100%; margin-top: 20px; background-color: var(--primary-color); color: white;">Submit</button>
+                                    style="width: 100%; margin-top: 20px; background-color: var(--primary-color); color: white;"
+                                    value="login">Submit</button>
                             </form>
                             <input type="checkbox" value="checkedValue"> Remember me
                         </div>
@@ -72,42 +119,11 @@
             </div>
         </div>
     </div>
-    <div class="top-nav-bar">
-        <div class="search-box">
-            <i class="fa fa-bars" id="menu-btn"></i>
-            <i class="fa fa-times" id="close-btn"></i>
 
-            <a href="/"><img src="../images/logo.png" class="logo"></a>
-            <input id="myInput" type="text" class="form-control" placeholder="Tìm kiếm" value="">
-            <select id="sel" size="2"></select>
-            <span class="input-group-text"><i class="fa fa-search"></i></span>
-        </div>
-        <div class="menu-bar">
-            <ul>
-                <li class="bar" id="cart"><a href="#"><i class="fa fa-shopping-basket"></i>Giỏ hàng</a>
-                    <span id="quantity" style="color: white;">0</span>
-                </li>
-                <!-- <li><a href="#">Shop Now</a></li> -->
-                <li class="bar"><a href="#info">Về chúng tôi</a></li>
-                {{#if user}}
-                <li class="bar" id="logout"><a href="/logout">Đăng xuất</a></li>
-                {{else}}
-                <li class="bar" id="sign-up" data-toggle="modal" data-target="#modelId"><a href="#">Đăng nhập</a></li>
-                <li class="bar"><a href="/signup">Đăng kí</a></li>
-                {{/if}}
-            </ul>
-
-        </div>
-        <div class="toast fade show" data-autohide="false" style="position: absolute; right: 0px; display: none;">
-            <div class="toast-header">
-                <span class="fa fa-check-circle mr-2 text-success"></span>
-                <strong class="mr-auto text-success">Thêm vào giỏ hàng thành công!</strong>
-            </div>
-        </div>
-    </div>
-
+    {{!-- Body --}}
     {{{body}}}
 
+    {{!-- Footer --}}
     <section class="footer" id="info">
         <div class="secondary">
             <div class="container text-center ">
@@ -158,13 +174,14 @@
             </div>
         </div>
     </section>
-    {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> --}}
-    {{!-- <script type="module" src="../../src/interact.js "></script> --}}
-    <script src="/src/login.js "></script>
-    <script type="module" src="/src/cart-button.js "></script>
+    {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" defer></script> --}}
+    <script type="module" src="../../src/interact.js " defer></script>
+    <script src="/src/login.js " defer></script>
+    <script type="module" src="/src/cart-button.js " defer></script>
 
 </body>
 
 </html>
+{{/if}}

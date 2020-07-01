@@ -53,7 +53,7 @@ $(document).ready(function () {
 
   renderCart();
   // add to cart
-  $(".on-sale .fa-shopping-cart").on("click", function () {
+  $(".product .fa-shopping-cart").on("click", function () {
     const linkTag = $(this).parents(".product-top").children("a")[0];
     const id = parseInt(idRegx.exec($(linkTag).attr("href")).groups.id);
     console.log(id);
@@ -73,7 +73,7 @@ $(document).ready(function () {
         id: id,
         name: nameProduct,
         productHtml,
-        img: img.attr("src"),
+        img: img.prop("src"),
         price: price,
         quantity: 1,
       });

@@ -18,6 +18,7 @@ html {
 
 body {
     font-family: sans-serif;
+    min-height: 100%;
 }
 
 .top-nav-bar {
@@ -29,7 +30,7 @@ body {
     /* border-bottom: 3px solid var(--primary-color); */
     border-radius: 2px;
     box-shadow: 0px 1px 10px rgb(117, 115, 110);
-    z-index: 2;
+    z-index: 10;
 }
 
 .toast-header {
@@ -84,7 +85,7 @@ body {
     width: 280px;
     max-width: 280px;
     position: fixed;
-    z-index: 3;
+    z-index: 11;
     background-color: #e2e2e298;
     border-radius: 10px;
     display: none;
@@ -135,15 +136,13 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--primary-color);
-<<<<<<< HEAD
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-=======
+
     /* border-top-left-radius: 20px;
     border-bottom-left-radius: 20px; */
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
->>>>>>> minor refactor
     outline: none;
 }
 
@@ -174,7 +173,7 @@ body {
     margin: 5px 10px;
 }
 
-.form-control {
+.search-box .form-control {
     margin-top: 9px;
     margin-left: 30px;
     border: 1px solid var(--primary-color) !important;
@@ -186,7 +185,17 @@ body {
     color: rgba(0, 0, 0, .87) !important;
 }
 
-.input-group-text {
+.search-box #search-form {
+    width: 100%;
+    display: flex;
+}
+
+#search-form #myInput {
+    width: 93%;
+}
+
+#search-form .input-group-text {
+    width: 7%;
     background: var(--linear-color) !important;
     border: 1px solid var(--primary-color) !important;
     margin: 8.5px 10px 3px 0 !important;
@@ -531,7 +540,9 @@ body {
 /*--------------footer---------------*/
 
 .footer {
-    margin-top: 50px;
+    clear: both;
+    position: relative;
+    margin-top: 100px;
     color: #fff;
     background-color: rgb(24, 16, 5);
 }
