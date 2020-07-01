@@ -127,7 +127,8 @@ FROM
     p ON ode.productid = p.productid) 
     ON od.orderid = ode.orderid
 WHERE
-    userid = ${req.user.id}`)
+    userid = ${req.user.id}
+ORDER BY od.orderDate DESC`)
     .then((rows) =>
       rows.map((r) => ({
         ...r,
